@@ -1,5 +1,245 @@
+@font-face {
+  font-family: Roboto;
+  src: url(/assets/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+:root {
+  --clr-primitive-white: #FFFFFF;
+  --clr-primitive-gray: #D9D9D9;
+  --clr-primitive-blue: #4E82A3;
+  --clr-primitive-light-blue: #CFE6F0;
+  --clr-primitive-black: #2F3E4B;
+
+  --color-white: var(--clr-primitive-white);
+  --color-gray: var(--clr-primitive-gray);
+  --color-accent: var(--clr-primitive-blue);
+  --color-light-accent: var(--clr-primitive-light-blue);
+  --color-black: var(--clr-primitive-black);
+  --color-light-accent: var(--clr-primitive-light-blue);
+  --color-text-main: var(--clr-primitive-black);
+  --color-text-accent: var(--clr-primitive-blue);
+  --color-text-white: var(--clr-primitive-white);
+
+  --font-montserrat: 'Montserrat';
+  --font-roboto: 'Roboto';
+
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-h3: 20px;
+  --fs-body: 16px;
+  --fs-caption: 12px;
+  
+  --fw-bold: 700;
+  --fw-regular: 400;
+}
+
+.font-title-1 {
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-main);
+}
+
+.font-title-2 {
+  font-family: var(--font-roboto);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-main);
+}
+
+.font-title-3 {
+  font-family: var(--font-roboto);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-accent);
+}
+
+.font-body {
+  font-family: var(--font-roboto);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+}
+
+.font-caption {
+  font-family: var(--font-roboto);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-regular);
+}
+
+.white-text {
+  color: var(--color-text-white);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.main-container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.header {
+  background-color: white;
+}
+
+.header__container {
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0px 5px 5px #4e82a382 );
+}
+
+.main-button {
+  background-color: var(--color-accent);
+  height: 40px;
+  border: none;
+  padding: 0 40px;
+  border-radius: 20px;
+  color: var(--color-text-white);
+  font-family: var(--font-roboto);
+  font-size: var(--fs-body);
+  width: fit-content;
+}
+
+.white-button {
+  background-color: var(--color-white);
+  color: var(--color-text-accent);
+}
+
+.hero {
+  height: 580px;
+  background-color: var(--color-gray);
+  padding-top: 50px;
+}
+
+.hero__info{
+  width: 500px;
+}
+
+.menu {
+  border-radius: 40px;
+  padding: 30px 40px;
+  margin-top: -190px;
+  background-color: var(--color-white);
+
+  .image-wrapper{
+    width: 300px;
+    height: 200px;
+    background-color: var(--color-gray);
+    border-radius: 20px;
+  }
+}
+
+.menu-categories {
+  justify-content: space-between;
+}
+
+.about-us-bg {
+  position: relative;
+  border-radius: 0 40px 40px 0;
+  background-color: var(--color-light-accent);
+  margin-right: calc(( 100vw - 1200px)/2);
+  padding: 40px 0 150px;
+  padding-left: calc(( 100vw - 1200px)/2);
+  /* padding-right: calc(50vw - 50% + 40px);  */
+}
+
+.items-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 40px;
+  right: calc(( 100vw - 1200px)/2*-1);
+
+  .item {
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    background-color: var(--color-white);
+    padding-right: calc(( 100vw - 1100px)/2);
+  }
+
+  .image-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: var(--color-gray);
+  }
+}
+
+.visit-us {
+  .image-wrapper {
+    border-radius: 40px;
+    width: 670px;
+    height: 350px;
+  }
+}
+
+.image-wrapper {
+  background-color: var(--color-gray);
+}
+
+.about-us-info {
+  width: 500px;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+.flex-row{
+  display: flex;
+}
+
+.gap-10{
+  gap: 10px;
+}
+.gap-20{
+  gap: 20px;
+}
+.gap-30{
+  gap: 30px;
+}
+.gap-40{
+  gap: 40px;
+}
+.gap-50{
+  gap: 50px;
+}
+.gap-60{
+  gap: 60px;
+}
+.gap-70{
+  gap: 70px;
+}
+
+.item-indicator {
+  width: 5px;
+  border-radius: 10px;
+  background-color: var(--color-accent);
+}
+
+.visit-us-info {
+  justify-content: space-between;
+}
+
+.footer {
+  margin-top: 100px;
+  background-color: var(--color-accent);
+  padding: 25px 0;
+
+  .main-container {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }

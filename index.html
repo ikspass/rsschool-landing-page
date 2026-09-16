@@ -7,6 +7,144 @@
   <title>Landing Page</title>
 </head>
 <body>
+  <header class="header drop-shadow">
+    <div class="flex-row font-body main-container header__container">
+      <h1 class="font-title-1">CoffeeShop</h1>
+      <nav class="flex-row gap-60">
+        <p>Menu</p>
+        <p>About Us</p>
+        <p>Visit Us</p>
+        <p>How To Order</p>
+      </nav>
+      <button class="main-button">Basket</button>
+    </div>
+  </header>
+  <main class="flex-col gap-70">
+    <section class="hero" id="hero">
+      <div class="flex-col gap-40 main-container">
+        <div class="flex-col gap-20 hero__info">
+          <h2 class="font-title-1 white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+          <p class="font-title-2 white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+        </div>
+        <button class="main-button white-button">Order Now →</button>
+      </div>
+    </section>
+    <section class="flex-col gap-40 main-container menu drop-shadow" id="menu">
+      <div class="flex-col gap-10">
+        <h2 class="font-title-1">Menu</h2>
+        <p class="font-title-2">What will you wish for?</p>
+      </div>
+      <div class="flex-row menu-categories">
+        <div class="flex-col gap-20 menu-categories__item">
+          <div class="image-wrapper">
+            <img src="" alt="">
+          </div>
+          <p class="font-title-3">Drink</p>
+        </div>
+        <div class="flex-col gap-20 menu-categories__item">
+          <div class="image-wrapper">
+            <img src="" alt="">
+          </div>
+          <p class="font-title-3">Desserts</p>
+        </div>
+        <div class="flex-col gap-20 menu-categories__item">
+          <div class="image-wrapper">
+            <img src="" alt="">
+          </div>
+          <p class="font-title-3">Sets</p>
+        </div>
+      </div>
+      <button class="main-button">Full Menu →</button>
+    </section>
+    <section id="aboutUs">
+      <div class="about-us-bg">
+        <div class="flex-col gap-30 about-us-info">
+          <div class="flex-col gap-10">
+            <h2 class="font-title-1">About Us</h2>
+            <p class="font-title-2">Brewing happiness, one cup at a time since 2020.</p>
+          </div>
+          <div class="flex-col gap-20">
+            <p class="font-body">Welcome to our cozy corner in Brooklyn. We started with a simple mission: to roast the finest beans and create a welcoming space where neighbors can connect, work, or just slow down and enjoy the moment.</p>
+            <p class="font-body">Every morning, our team carefully selects and crafts each espresso shot to make your day brighter. For us, coffee is not just a drink — it’s a passion, a craft, and a way to bring people together.</p>
+          </div>
+        </div>
+        <div class="flex-col gap-20 items-container">
+          <div class="flex-row gap-30 item drop-shadow">
+            <div class="image-wrapper">
+              <img src="" alt="">
+            </div>
+            <div class="flex-col gap-10">
+              <p class="font-title-2">Premium Beans</p>
+              <p class="font-body">100% organic, ethically sourced specialty coffee.</p>
+            </div>
+          </div>
+          <div class="flex-row gap-30 item drop-shadow">
+            <div class="image-wrapper">
+              <img src="" alt="">
+            </div>
+            <div class="flex-col gap-10">
+              <p class="font-title-2">Fresh Pastries</p>
+              <p class="font-body">Baked daily by local artisans.</p>
+            </div>
+          </div>
+          <div class="flex-row gap-30 item drop-shadow">
+            <div class="image-wrapper">
+              <img src="" alt="">
+            </div>
+            <div class="flex-col gap-10">
+              <p class="font-title-2">Cozy Vibe</p>
+              <p class="font-body">The perfect spot with free Wi-Fi and friendly smiles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex-col gap-20 main-container visit-us" id="visitUs">
+      <h2 class="font-title-1">Visit Us</h2>
+      <div class="flex-row visit-us-info">
+        <div class="flex-col gap-50">
+          <p class="font-title-2">Text</p>
+          <div class="flex-col gap-20">
+            <div class="flex-row gap-20">
+              <div class="item-indicator"></div>
+              <div class="flex-col gap-10">
+                <h3 class="font-title-2">Our Location</h3>
+                <p class="font-body">742 Evergreen Terrace, Brooklyn, NY 11211</p>
+              </div>
+            </div>
+            <div class="flex-row gap-20">
+              <div class="item-indicator"></div>
+              <div class="flex-col gap-10">
+                <h3 class="font-title-2">Opening Hours</h3>
+                <p class="font-body">7:30 AM – 8:00 PM</p>
+              </div>
+            </div>
+            <div class="flex-row gap-20">
+              <div class="item-indicator"></div>
+              <div class="flex-col gap-10">
+                <h3 class="font-title-2">Get in Touch</h3>
+                <p class="font-body">Phone: +1 (555) 019-2834<br>Email: hello@yourcoffeeplace.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="image-wrapper">
+          <img src="" alt="">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="flex-row main-container">
+      <div class="flex-col gap-10">
+        <p class="font-title-1 white-text">CoffeeShop</p>
+        <p class="font-body white-text">742 Evergreen Terrace, Brooklyn, NY 11211</p>
+        <p class="font-body white-text">7:30 AM – 8:00 PM</p>
+      </div>
+      <p class="font-body white-text">© 2026 CoffeShop</p>
+      <div></div>
+    </div>
+  </footer>
   <script src="js/main.js"></script>
 </body>
 </html>
