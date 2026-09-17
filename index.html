@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <title>Landing Page</title>
+  <script src="https://kit.fontawesome.com/3b0c308809.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="header drop-shadow">
-    <div class="flex-row font-body main-container header__container">
-      <h1 class="font-title-1">CoffeeShop</h1>
+    <div class="flex-row main-container header__container">
+      <h1 class="font-title-1"><a href="index.html">CoffeeShop</a></h1>
       <nav class="flex-row gap-60">
-        <p>Menu</p>
-        <p>About Us</p>
-        <p>Visit Us</p>
-        <p>How To Order</p>
+        <a class="font-body" href="#menu">Menu</a>
+        <a class="font-body" href="#specialOffers">Special Offers</a>
+        <a class="font-body" href="#aboutUs">About Us</a>
+        <a class="font-body" href="#visitUs">Visit Us</a>
       </nav>
-      <button class="main-button">Basket</button>
+      
+      <button class="main-button" onclick="window.location.href='menu.html'">Menu</button>
     </div>
   </header>
   <main class="flex-col gap-70">
@@ -26,7 +28,7 @@
           <h2 class="font-title-1 white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
           <p class="font-title-2 white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
         </div>
-        <button class="main-button white-button">Order Now →</button>
+        <button class="main-button white-button">Menu →</button>
       </div>
     </section>
     <section class="flex-col gap-40 main-container menu drop-shadow" id="menu">
@@ -34,31 +36,56 @@
         <h2 class="font-title-1">Menu</h2>
         <p class="font-title-2">What will you wish for?</p>
       </div>
-      <div class="flex-row menu-categories">
-        <div class="flex-col gap-20 menu-categories__item">
+      <div class="flex-row menu__categories">
+        <div class="flex-col gap-20 menu__category">
           <div class="image-wrapper">
-            <img src="" alt="">
+            <img src="assets/images/drinks.jpg" alt="Drink category">
           </div>
-          <p class="font-title-3">Drink</p>
+          <p class="font-body">Drinks</p>
         </div>
-        <div class="flex-col gap-20 menu-categories__item">
+        <div class="flex-col gap-20  menu__category">
           <div class="image-wrapper">
-            <img src="" alt="">
+            <img src="assets/images/desserts.jpg" alt="Desserts category">
           </div>
-          <p class="font-title-3">Desserts</p>
+          <p class="font-body">Desserts</p>
         </div>
-        <div class="flex-col gap-20 menu-categories__item">
+        <div class="flex-col gap-20  menu__category">
           <div class="image-wrapper">
-            <img src="" alt="">
+            <img src="assets/images/desserts-for-two-set.jpg" alt="Sets category">
           </div>
-          <p class="font-title-3">Sets</p>
+          <p class="font-body">Sets</p>
         </div>
       </div>
-      <button class="main-button">Full Menu →</button>
+      <button class="main-button" onclick="window.location.href='menu.html'">Full Menu →</button>
+    </section>
+    <section class="flex-col gap-30 special-offers" id="specialOffers">
+      <div class="flex-col gap-30 main-container">
+        <h1 class="font-title-1">Special Offers</h1>
+        <div class="flex-col gap-20 special-offers__carousel">
+          <div class="flex-row gap-20 carousel__viewport">
+            <button class="icon-button"><</button>
+            <div class="flex-row gap-30 carousel__item">
+              <div class="image-wrapper">
+                <img src="assets/images/morning-coffee-discount.jpg" alt="">
+              </div>
+              <div class="flex-col gap-10">
+                <h2 class="font-title-2 accent-text">Morning Coffee Discount</h2>
+                <p class="font-body">Start your day with a refreshing coffee! Order any coffee before 11:00 and get a 20% discount on fresh pastries. The perfect combination for a morning mood!</p>
+              </div>
+            </div>
+            <button class="icon-button">></button>
+          </div>
+          <div class="flex-row gap-10">
+            <div class="carousel__indicator carousel__indicator--active"></div>
+            <div class="carousel__indicator"></div>
+            <div class="carousel__indicator"></div>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="aboutUs">
-      <div class="about-us-bg">
-        <div class="flex-col gap-30 about-us-info">
+      <div class="about-us__bg">
+        <div class="flex-col gap-30 about-us__info">
           <div class="flex-col gap-10">
             <h2 class="font-title-1">About Us</h2>
             <p class="font-title-2">Brewing happiness, one cup at a time since 2020.</p>
@@ -68,28 +95,28 @@
             <p class="font-body">Every morning, our team carefully selects and crafts each espresso shot to make your day brighter. For us, coffee is not just a drink — it’s a passion, a craft, and a way to bring people together.</p>
           </div>
         </div>
-        <div class="flex-col gap-20 items-container">
-          <div class="flex-row gap-30 item drop-shadow">
+        <div class="flex-col gap-20 about-us__features">
+          <div class="flex-row gap-30 about-us__feature-item drop-shadow">
             <div class="image-wrapper">
-              <img src="" alt="">
+              <img src="assets/images/coffeeBean.svg" alt="">
             </div>
             <div class="flex-col gap-10">
-              <p class="font-title-2">Premium Beans</p>
+              <p class="font-title-2"> Premium Beans</p>
               <p class="font-body">100% organic, ethically sourced specialty coffee.</p>
             </div>
           </div>
-          <div class="flex-row gap-30 item drop-shadow">
+          <div class="flex-row gap-30 about-us__feature-item drop-shadow">
             <div class="image-wrapper">
-              <img src="" alt="">
+              <img src="assets/images/bakery.svg" alt="">
             </div>
             <div class="flex-col gap-10">
               <p class="font-title-2">Fresh Pastries</p>
               <p class="font-body">Baked daily by local artisans.</p>
             </div>
           </div>
-          <div class="flex-row gap-30 item drop-shadow">
+          <div class="flex-row gap-30 about-us__feature-item drop-shadow">
             <div class="image-wrapper">
-              <img src="" alt="">
+              <img src="assets/images/smile.svg" alt="">
             </div>
             <div class="flex-col gap-10">
               <p class="font-title-2">Cozy Vibe</p>
@@ -101,35 +128,35 @@
     </section>
     <section class="flex-col gap-20 main-container visit-us" id="visitUs">
       <h2 class="font-title-1">Visit Us</h2>
-      <div class="flex-row visit-us-info">
+      <div class="flex-row gap-40 visit-us__info">
         <div class="flex-col gap-50">
-          <p class="font-title-2">Text</p>
+          <p class="font-title-2">Come on in — your perfect cup of coffee is waiting for you.</p>
           <div class="flex-col gap-20">
             <div class="flex-row gap-20">
-              <div class="item-indicator"></div>
+              <div class="visit-us__indicator"></div>
               <div class="flex-col gap-10">
-                <h3 class="font-title-2">Our Location</h3>
+                <h3 class="font-title-2 accent-text">Our Location</h3>
                 <p class="font-body">742 Evergreen Terrace, Brooklyn, NY 11211</p>
               </div>
             </div>
             <div class="flex-row gap-20">
-              <div class="item-indicator"></div>
+              <div class="visit-us__indicator"></div>
               <div class="flex-col gap-10">
-                <h3 class="font-title-2">Opening Hours</h3>
+                <h3 class="font-title-2 accent-text">Opening Hours</h3>
                 <p class="font-body">7:30 AM – 8:00 PM</p>
               </div>
             </div>
             <div class="flex-row gap-20">
-              <div class="item-indicator"></div>
+              <div class="visit-us__indicator"></div>
               <div class="flex-col gap-10">
-                <h3 class="font-title-2">Get in Touch</h3>
+                <h3 class="font-title-2 accent-text">Get in Touch</h3>
                 <p class="font-body">Phone: +1 (555) 019-2834<br>Email: hello@yourcoffeeplace.com</p>
               </div>
             </div>
           </div>
         </div>
         <div class="image-wrapper">
-          <img src="" alt="">
+          <img src="assets/images/hero10.jpg" alt="Visit us image">
         </div>
       </div>
     </section>
