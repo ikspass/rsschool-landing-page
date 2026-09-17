@@ -12,6 +12,16 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main{
+  flex: 1 0 auto;
+}
+
 section {
   scroll-margin-top: 100px;
 }
@@ -280,6 +290,7 @@ a {
   margin-top: 100px;
   background-color: var(--color-accent);
   padding: 25px 0;
+  flex-shrink: 0;
 
   .main-container {
     justify-content: space-between;
