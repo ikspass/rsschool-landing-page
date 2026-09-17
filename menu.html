@@ -10,13 +10,13 @@
   <header class="header drop-shadow">
     <div class="flex-row main-container header__container">
       <h1 class="font-title-1"><a href="index.html">CoffeeShop</a></h1>
-      <nav class="flex-row gap-60">
+      <nav class="flex-row gap-60 desktop">
         <a class="font-body" href="index.html#menu">Menu</a>
         <a class="font-body" href="index.html#specialOffers">Special Offers</a>
         <a class="font-body" href="index.html#aboutUs">About Us</a>
         <a class="font-body" href="index.html#visitUs">Visit Us</a>
       </nav>
-      <button class="main-button">Menu</button>
+      <button class="main-button desktop">Menu</button>
     </div>
   </header>
   <main class="flex-col gap-30">
@@ -26,10 +26,10 @@
         <p class="font-title-2">What will you wish for?</p>
       </div>
     </section>
-    <section class="main-container flex-row gap-30">
-      <button class="pin active">Drinks</button>
-      <button class="pin">Desserts</button>
-      <button class="pin">Sets</button>
+    <section class="main-container flex-row gap-30 pins">
+      <button class="pin active" id="drinksPin">Drinks</button>
+      <button class="pin" id="dessertsPin">Desserts</button>
+      <button class="pin" id="setsPin">Sets</button>
     </section>
     <section id="desserts">
       <div class="menu-section-heading">
@@ -87,7 +87,6 @@
         <p class="font-body white-text">7:30 AM – 8:00 PM</p>
       </div>
       <p class="font-body white-text">© 2026 CoffeShop</p>
-      <div></div>
     </div>
   </footer>
   <script src="js/main.js"></script>

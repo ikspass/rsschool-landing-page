@@ -4,20 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/min-desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <title>Landing Page</title>
 </head>
 <body>
   <header class="header drop-shadow">
     <div class="flex-row main-container header__container">
       <h1 class="font-title-1"><a href="index.html">CoffeeShop</a></h1>
-      <nav class="flex-row gap-60">
+      <nav class="flex-row gap-60 desktop">
         <a class="font-body" href="#menu">Menu</a>
         <a class="font-body" href="#specialOffers">Special Offers</a>
         <a class="font-body" href="#aboutUs">About Us</a>
         <a class="font-body" href="#visitUs">Visit Us</a>
       </nav>
       
-      <button class="main-button" onclick="window.location.href='menu.html'">Menu</button>
+      <button class="main-button desktop" onclick="window.location.href='menu.html'">Menu</button>
     </div>
   </header>
   <main class="flex-col gap-70">
@@ -27,7 +30,7 @@
           <h2 class="font-title-1 white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
           <p class="font-title-2 white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
         </div>
-        <button class="main-button white-button">Menu →</button>
+        <button class="main-button white-button" onclick="window.location.href='menu.html'">Menu →</button>
       </div>
     </section>
     <section class="flex-col gap-40 main-container menu drop-shadow" id="menu">
@@ -37,21 +40,27 @@
       </div>
       <div class="flex-row menu__categories">
         <div class="flex-col gap-20 menu__category">
-          <div class="image-wrapper">
-            <img src="assets/images/drinks.jpg" alt="Drink category">
-          </div>
+          <a href="menu.html">
+            <div class="image-wrapper">
+              <img src="assets/images/drinks.jpg" alt="Drinks category">
+            </div>
+          </a>
           <p class="font-body">Drinks</p>
         </div>
         <div class="flex-col gap-20  menu__category">
-          <div class="image-wrapper">
-            <img src="assets/images/desserts.jpg" alt="Desserts category">
-          </div>
+          <a href="menu.html">
+            <div class="image-wrapper">
+              <img src="assets/images/desserts.jpg" alt="Desserts category">
+            </div>
+          </a>
           <p class="font-body">Desserts</p>
         </div>
         <div class="flex-col gap-20  menu__category">
-          <div class="image-wrapper">
-            <img src="assets/images/desserts-for-two-set.jpg" alt="Sets category">
-          </div>
+          <a href="menu.html">
+            <div class="image-wrapper">
+              <img src="assets/images/desserts-for-two-set.jpg" alt="Sets category">
+            </div>
+          </a>
           <p class="font-body">Sets</p>
         </div>
       </div>
@@ -62,17 +71,17 @@
         <h1 class="font-title-1">Special Offers</h1>
         <div class="flex-col gap-20 special-offers__carousel">
           <div class="flex-row gap-20 carousel__viewport">
-            <button class="icon-button"><</button>
+            <button class="icon-button tablet"><</button>
             <div class="flex-row gap-30 carousel__item">
               <div class="image-wrapper">
-                <img src="assets/images/morning-coffee-discount.jpg" alt="">
+                <img src="assets/images/morning-coffee-discount.jpg" alt="Morning Coffee Discount">
               </div>
               <div class="flex-col gap-10">
                 <h2 class="font-title-2 accent-text">Morning Coffee Discount</h2>
                 <p class="font-body">Start your day with a refreshing coffee! Order any coffee before 11:00 and get a 20% discount on fresh pastries. The perfect combination for a morning mood!</p>
               </div>
             </div>
-            <button class="icon-button">></button>
+            <button class="icon-button tablet">></button>
           </div>
           <div class="flex-row gap-10">
             <div class="carousel__indicator carousel__indicator--active"></div>
@@ -97,7 +106,7 @@
         <div class="flex-col gap-20 about-us__features">
           <div class="flex-row gap-30 about-us__feature-item drop-shadow">
             <div class="image-wrapper">
-              <img src="assets/images/coffeeBean.svg" alt="">
+              <img src="assets/images/coffeeBean.svg" alt="Coffee Bean">
             </div>
             <div class="flex-col gap-10">
               <p class="font-title-2"> Premium Beans</p>
@@ -106,7 +115,7 @@
           </div>
           <div class="flex-row gap-30 about-us__feature-item drop-shadow">
             <div class="image-wrapper">
-              <img src="assets/images/bakery.svg" alt="">
+              <img src="assets/images/bakery.svg" alt="Bakery">
             </div>
             <div class="flex-col gap-10">
               <p class="font-title-2">Fresh Pastries</p>
@@ -115,7 +124,7 @@
           </div>
           <div class="flex-row gap-30 about-us__feature-item drop-shadow">
             <div class="image-wrapper">
-              <img src="assets/images/smile.svg" alt="">
+              <img src="assets/images/smile.svg" alt="Smile">
             </div>
             <div class="flex-col gap-10">
               <p class="font-title-2">Cozy Vibe</p>
@@ -155,7 +164,7 @@
           </div>
         </div>
         <div class="image-wrapper">
-          <img src="assets/images/hero10.jpg" alt="Visit us image">
+          <img src="assets/images/hero10.jpg" alt="Guest in our cafe">
         </div>
       </div>
     </section>
@@ -168,7 +177,6 @@
         <p class="font-body white-text">7:30 AM – 8:00 PM</p>
       </div>
       <p class="font-body white-text">© 2026 CoffeShop</p>
-      <div></div>
     </div>
   </footer>
   <script src="js/main.js"></script>
