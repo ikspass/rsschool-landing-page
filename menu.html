@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Menu</title>
 </head>
-<body>
+<body id="body">
   <header class="header drop-shadow">
     <div class="flex-row main-container header__container">
       <h1 class="font-title-1"><a href="index.html">CoffeeShop</a></h1>
@@ -20,6 +20,10 @@
     </div>
   </header>
   <main class="flex-col gap-30">
+    <div class="backdrop" id="backdrop">
+      <div class="flex-row gap-20 modal-window drop-shadow" id="modalWindow">
+      </div>
+    </div>
     <section class="main-container top-section">
       <div class="flex-col gap-10">
         <h1 class="font-title-1">Menu</h1>
@@ -34,47 +38,11 @@
     <section id="desserts">
       <div class="menu-section-heading">
         <div class="menu-section-heading-line left"></div>
-        <h2 class="font-title-1">Drinks</h2>
+        <h2 class="font-title-1" id="menuTitle">Drinks</h2>
         <div class="menu-section-heading-line right"></div>
       </div>
       <div class="main-container">
-        <div class="flex-row gap-30 menu-grid">
-          <div class="flex-col gap-20 menu-item drop-shadow">
-            <div class="image-wrapper">
-              <img src="" alt="">
-            </div>
-            <div class="flex-col gap-10">
-              <h3 class="font-title-2">Cheese Cake</h3>
-              <p class="font-title-2">$3.00</p>
-            </div>
-          </div>
-          <div class="flex-col gap-20 menu-item drop-shadow">
-            <div class="image-wrapper">
-              <img src="" alt="">
-            </div>
-            <div class="flex-col gap-10">
-              <h3 class="font-title-2">Cheese Cake</h3>
-              <p class="font-title-2">$3.00</p>
-            </div>
-          </div>
-          <div class="flex-col gap-20 menu-item drop-shadow">
-            <div class="image-wrapper">
-              <img src="" alt="">
-            </div>
-            <div class="flex-col gap-10">
-              <h3 class="font-title-2">Cheese Cake</h3>
-              <p class="font-title-2">$3.00</p>
-            </div>
-          </div>
-          <div class="flex-col gap-20 menu-item drop-shadow">
-            <div class="image-wrapper">
-              <img src="" alt="">
-            </div>
-            <div class="flex-col gap-10">
-              <h3 class="font-title-2">Cheese Cake</h3>
-              <p class="font-title-2">$3.00</p>
-            </div>
-          </div>
+        <div class="flex-row gap-30 menu-grid" id="menuGrid">
         </div>
       </div>
     </section>
