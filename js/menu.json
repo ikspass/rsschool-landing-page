@@ -4,7 +4,11 @@
     "category": "drinks",
     "name": "Espresso",
     "description": "Strong and rich espresso made from selected beans. Perfect for lovers of bold flavors and aromas.",
-    "price": "3.00",
+    "price": {
+      "s": "3.00",
+      "m": "4.00",
+      "l": "5.00"
+    },
     "img": "espresso.jpg"
   },
   {
@@ -12,7 +16,11 @@
     "category": "drinks",
     "name": "Vanilla Latte",
     "description": "A delicate latte with vanilla syrup. This wonderful drink is perfect for a morning treat.",
-    "price": "4.00",
+    "price": {
+      "s": "4.00",
+      "m": "5.00",
+      "l": "6.00"
+    },
     "img": "vanilla-latte.jpg"
   },
   {
@@ -20,7 +28,11 @@
     "category": "drinks",
     "name": "Black Tea with Lemon",
     "description": "Refreshing black tea with lemon. It will energize you at any time of the day.",
-    "price": "2.00",
+    "price": {
+      "s": "2.00",
+      "m": "3.00",
+      "l": "4.00"
+    },
     "img": "black-tea-with-lemon.jpg"
   },
   {
@@ -28,7 +40,11 @@
     "category": "drinks",
     "name": "Orange Fresh",
     "description": "Refreshing orange juice made from fresh oranges. Perfect for a morning start.",
-    "price": "5.00",
+    "price": {
+      "s": "5.00",
+      "m": "6.00",
+      "l": "7.00"
+    },
     "img": "orange-fresh.jpg"
   },
   {
@@ -36,7 +52,11 @@
     "category": "drinks",
     "name": "Strawberry Milkshake",
     "description": "A gentle milkshake with fresh strawberries. A wonderful dessert for sweet tooths.",
-    "price": "6.00",
+    "price": {
+      "s": "6.00",
+      "m": "7.00",
+      "l": "8.00"
+    },
     "img": "strawberry-milkshake.jpg"
   },
   {

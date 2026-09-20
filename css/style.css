@@ -12,10 +12,47 @@ html {
   scroll-behavior: smooth;
 }
 
+body.dark {
+  --color-background: var(--clr-primitive-dark-brown);
+  --color-text-main: var(--clr-primitive-white);
+  --color-second-background: var(--clr-primitive-brown);
+  --color-buttons: var(--clr-primitive-light-brown);
+
+  --color-white: var(--clr-primitive-white);
+  --color-accent: var(--clr-primitive-brown);
+  --color-light-accent: var(--clr-primitive-light-brown);
+  --color-beige: var(--clr-primitive-beige);
+  --color-gray: var(--clr-primitive-gray);
+  --color-black: var(--clr-primitive-black);
+
+  .drop-shadow {
+    filter: drop-shadow(0px 5px 5px var(--clr-primitive-black-50));
+  }
+}
+
+body.light {
+  --color-background: var(--clr-primitive-white);
+  --color-text-main: var(--clr-primitive-black);
+  --color-second-background: var(--clr-primitive-beige);
+  --color-buttons: var(--clr-primitive-brown);
+
+  --color-white: var(--clr-primitive-white);
+  --color-accent: var(--clr-primitive-brown);
+  --color-light-accent: var(--clr-primitive-light-brown);
+  --color-beige: var(--clr-primitive-beige);
+  --color-gray: var(--clr-primitive-gray);
+  --color-black: var(--clr-primitive-black);
+  
+  .drop-shadow {
+    filter: drop-shadow(0px 5px 5px var(--clr-primitive-light-brown-50));
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--color-background);
 }
 
 main{
@@ -29,18 +66,16 @@ section {
 :root {
   --clr-primitive-white: #FFFFFF;
   --clr-primitive-gray: #D9D9D9;
-  --clr-primitive-blue: #665F55;
-  --clr-primitive-light-blue: #E1D4C9;
-  --clr-primitive-black: #665F55;
+  --clr-primitive-brown: #50433C;
+  --clr-primitive-dark-brown: #3a2f29;
+  --clr-primitive-light-brown: #B0907A;
+  --clr-primitive-light-brown-50: #b0907a83;
+  --clr-primitive-beige: #E1D4C9;
+  --clr-primitive-black: #29211d;
+  --clr-primitive-black-50: #29211dbe;
 
-  --color-white: var(--clr-primitive-white);
-  --color-gray: var(--clr-primitive-gray);
-  --color-accent: var(--clr-primitive-blue);
-  --color-light-accent: var(--clr-primitive-light-blue);
-  --color-black: var(--clr-primitive-black);
-  --color-light-accent: var(--clr-primitive-light-blue);
   --color-text-main: var(--clr-primitive-black);
-  --color-text-accent: var(--clr-primitive-blue);
+  --color-text-accent: var(--clr-primitive-light-brown);
   --color-text-white: var(--clr-primitive-white);
 
   --font-montserrat: 'Montserrat';
@@ -57,6 +92,13 @@ section {
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 a {
   color: var(--color-text-main);
 }
 
@@ -78,11 +120,13 @@ a {
   font-family: var(--font-roboto);
   font-size: var(--fs-body);
   font-weight: var(--fw-regular);
+  color: var(--color-text-main);
 }
 
 .font-caption {
   font-family: var(--font-roboto);
   font-size: var(--fs-caption);
+  color: var(--color-text-main);
   font-weight: var(--fw-regular);
 }
 
@@ -106,10 +150,14 @@ a {
 }
 
 .header {
-  background-color: white;
+  background-color: var(--color-background);
   position: sticky;
   z-index: 10;
   top: 0;
+
+  ul {
+    list-style: none;
+  }
 }
 
 .header__container {
@@ -118,12 +166,8 @@ a {
   align-items: center;
 }
 
-.drop-shadow {
-  filter: drop-shadow(0px 5px 5px #665f5578 );
-}
-
 .main-button {
-  background-color: var(--color-accent);
+  background-color: var(--color-buttons);
   height: 40px;
   border: none;
   padding: 0 40px;
@@ -132,34 +176,68 @@ a {
   font-family: var(--font-roboto);
   font-size: var(--fs-body);
   width: fit-content;
+  transition: 0.3s;
+}
+
+.main-button:hover {
+  background-color: var(--color-light-accent);
+  color: var(--color-white);
+  filter: drop-shadow(0px 0px 5px var(--color-light-accent) );
 }
 
 .icon-button {
   flex-shrink: 0;
-  border: 1px solid var(--color-light-accent);
+  border: 1px solid var(--color-buttons);
   width: 40px;
-  color: var(--color-accent);
+  color: var(--color-buttons);
   height: 40px;
-  background-color: var(--color-white);
-  border-radius: 10px;
+  font-family: var(--font-roboto);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  background-color: var(--color-background);
+  border-radius: 100px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button img {
+  width: 25px;
+}
+
+.icon-button:hover{
+  color: var(--color-text-accent);
+  filter: drop-shadow(0px 0px 5px var(--color-beige) );
+  border: 1px solid var(--color-light-accent);
 }
 
 .white-button {
   background-color: var(--color-white);
-  color: var(--color-text-accent);
+  color: var(--color-black);
 }
 
 .hero {
   height: 580px;
   background-color: var(--color-gray);
-  padding-top: 50px;
-  background-image: url(/assets/images/hero2.jpg);
+  background-image: url(/assets/images/hero-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+.hero-backdrop{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur();
 }
 
 .hero__info{
+  padding-top: 50px;
   width: 500px;
 }
 
@@ -167,7 +245,7 @@ a {
   border-radius: 40px;
   padding: 30px 40px;
   margin-top: -190px;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
 
   .image-wrapper{
     width: 300px;
@@ -192,7 +270,7 @@ a {
 .about-us__bg {
   position: relative;
   border-radius: 0 40px 40px 0;
-  background-color: var(--color-light-accent);
+  background-color: var(--color-second-background);
   margin-right: calc(( 100vw - 1200px)/2);
   padding: 40px 0 150px;
   padding-left: calc(( 100vw - 1200px)/2);
@@ -216,7 +294,7 @@ a {
 .about-us__feature-item {
   padding: 20px;
   border-radius: 20px 0 0 20px;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   padding-right: calc(( 100vw - 1100px)/2);
 }
 
@@ -323,22 +401,22 @@ a {
 .carousel__indicator {
   width: 50px;
   height: 10px;
-  border: 1px solid var(--color-light-accent);
+  border: 1px solid var(--color-second-background);
   border-radius: 100px;
 }
 
 .carousel__indicator--active {
-  background-color: var(--color-light-accent);
+  background-color: var(--color-second-background);
 }
 
 .special-offers {
-  background-color: var(--color-light-accent);
+  background-color: var(--color-second-background);
   padding: 20px 0;
 
   .main-container {
     border-radius: 40px;
     padding: 30px 40px;
-    background-color: var(--color-white);
+    background-color: var(--color-background);
   }
 }
 
@@ -358,7 +436,7 @@ button {
 .menu-section-heading-line {
   height: 5px;
   width: 100%;
-  background-color: var(--clr-primitive-blue);
+  background-color: var(--color-light-accent);
 }
 .menu-section-heading-line.left {
   border-radius: 0 10px 10px 0;
@@ -369,7 +447,7 @@ button {
 
 .menu-item {
   padding: 15px;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   border-radius: 20px;
   width: min-content;
 
@@ -379,7 +457,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
   }
-  
+ 
   img:hover {
     transform: scale(115%);
   }
@@ -398,14 +476,20 @@ button {
   border: 1px solid var(--color-light-accent);
   border-radius: 100px;
   padding: 5px 30px;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   font-family: var(--font-roboto);
   font-size: var(--fs-body);
-  color: var(--color-text-main);
+  color: var(--color-text-accent);
   width: fit-content;
+  transition: 0.2s;
+}
+
+.pin:hover {
+  filter: drop-shadow(0px 0px 5px var(--color-light-accent) );
 }
 
 .pin.active {
+  color: var(--color-text-white);
   background-color: var(--color-light-accent);
 }
 
@@ -429,7 +513,7 @@ button {
   width: 950px;
   padding: 20px;
   border-radius: 20px;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   position: absolute;
   z-index: 100;
   top: calc(40vh/2);
@@ -437,7 +521,6 @@ button {
   transition: 0.3s;
 
   .image-wrapper {
-    background-color: var(--clr-primitive-gray);
     width: 400px;
     height: 360px;
     border-radius: 10px;
@@ -482,11 +565,16 @@ button {
   width: 50px;
   height: 50px;
   border: 1px solid var(--color-light-accent);
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   border-radius: 100px;
   color: var(--color-text-main);
   font-family: var(--font-roboto);
   font-size: var(--fs-body);
+  transition: 0.2s;
+}
+
+.modal-button:hover {
+  filter: drop-shadow(0px 0px 5px var(--color-light-accent) );
 }
 
 .modal-button.active {
