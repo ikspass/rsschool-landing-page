@@ -24,6 +24,7 @@ fetch('./js/menu.json')
 function showElements() {
   previews[activeMenuPage].forEach(elem => {
     let item = document.createElement('div');
+
     item.className = 'flex-col gap-20 menu-item drop-shadow';
     item.innerHTML = `
         <div class="image-wrapper">
@@ -32,7 +33,7 @@ function showElements() {
         <div class="flex-col gap-10">
           <h3 class="font-title-2 accent-text">${elem.name}</h3>
           <p class="font-body">${elem.description}</p>
-          <span class="font-title-2">$ ${elem.price.s}</span>
+          <span class="font-title-2">$ ${elem.category == 'drinks' ? elem.price.s : elem.price}</span>
         </div>
     `;
 
@@ -83,19 +84,28 @@ function showModalWindow(id) {
             </div>
             <button class="icon-button font-title-2" onclick="closeModalWindow()">x</button>
           </div>
-          <div class="modal-separator"></div>
-          <div class="flex-col gap-10 modal-window__buttons">
-            <span class="font-caption modal-window__caption">Size</span>
-            <div class="flex-row gap-20">
-              <button class="modal-button active" id="s">s</button>
-              <button class="modal-button" id="m">m</button>
-              <button class="modal-button" id="l">l</button>
+          ${
+            elem.category == 'drinks' ?
+            `
+            <div class="modal-separator"></div>
+            ` : ''
+          }
+            <div class="flex-col gap-10 modal-window__buttons">
+            ${
+              elem.category == 'drinks' ? `
+              <span class="font-caption modal-window__caption">Size</span>
+              <div class="flex-row gap-20">
+                <button class="modal-button active" id="s">s</button>
+                <button class="modal-button" id="m">m</button>
+                <button class="modal-button" id="l">l</button>
+              </div>
+              ` : ''
+            }
             </div>
-          </div>
           <div class="modal-separator"></div>
           <div class="flex-row modal-window__total">
             <span class="font-title-2">Total:</span>
-            <span class="font-title-2" id="totalPrice">$ ${elem.price.s}</span>
+            <span class="font-title-2" id="totalPrice">$ ${elem.category == 'drinks' ? elem.price.s : elem.price}</span>
           </div>
         </div>
     `
