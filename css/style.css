@@ -154,10 +154,10 @@ h1 a {
   position: sticky;
   z-index: 10;
   top: 0;
+}
 
-  ul {
-    list-style: none;
-  }
+.header ul, .footer ul {
+  list-style: none;
 }
 
 .header__container {
