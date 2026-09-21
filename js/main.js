@@ -77,10 +77,6 @@ if (document.querySelector('#specialOffers')) {
     slideTitle.textContent = slides[currentSlide].name;
     slideDescription.textContent = slides[currentSlide].description;
     resetIndicator();
-    slideImg.src = `assets/images/${slides[currentSlide].img}`;
-    slideTitle.textContent = slides[currentSlide].name;
-    slideDescription.textContent = slides[currentSlide].description;
-    resetIndicator();
   }
   
   function resetIndicator() {
