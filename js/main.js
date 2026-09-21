@@ -1,6 +1,5 @@
 function changeTheme() {
   let activeTheme = localStorage.getItem('theme');
-  const themeButton = document.querySelector('#themeButton');
   if (activeTheme) {
     if (activeTheme === 'dark') {
       localStorage.setItem('theme', 'light');
@@ -78,6 +77,10 @@ if (document.querySelector('#specialOffers')) {
     slideTitle.textContent = slides[currentSlide].name;
     slideDescription.textContent = slides[currentSlide].description;
     resetIndicator();
+    slideImg.src = `assets/images/${slides[currentSlide].img}`;
+    slideTitle.textContent = slides[currentSlide].name;
+    slideDescription.textContent = slides[currentSlide].description;
+    resetIndicator();
   }
   
   function resetIndicator() {
@@ -90,7 +93,6 @@ if (document.querySelector('#specialOffers')) {
   if (window.matchMedia("(max-width: 800px)").matches){
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchmove', handleTouchMove, false);
-    console.log('aboba')
   
     let x1 = null;
     let y1 = null;
@@ -101,8 +103,6 @@ if (document.querySelector('#specialOffers')) {
         x1 = firstTouch.clientX;
         y1 = firstTouch.clientY;
     }
-  
-    const sliderLine = document.querySelector('.slides');
   
     function handleTouchMove(event){
       if(!x1 || !y1) return false;
