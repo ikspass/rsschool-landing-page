@@ -84,7 +84,7 @@ function showModalWindow(id) {
         <div class="image-wrapper">
           <img src="assets/images/${elem.img}" alt="${elem.name}">
         </div>
-        <div class="flex-col gap-10 modal-window__info">
+        <div class="flex-col gap-20 modal-window__info">
           <div class="flex-row gap-20 modal-window__title">
             <div class="flex-col gap-10">
               <h2 class="font-title-2 accent-text">${elem.name}</h2>

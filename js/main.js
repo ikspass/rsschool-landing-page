@@ -13,6 +13,7 @@ function changeTheme() {
   console.log(localStorage.getItem('theme'))
 }
 
+
 function resetTheme() {
   let activeTheme = localStorage.getItem('theme');
   if (!activeTheme) {
@@ -20,6 +21,14 @@ function resetTheme() {
   } else {
     document.querySelector('#body').className = activeTheme;
     document.querySelector('#themeButtonIcon').src = `assets/images/${activeTheme}-theme.svg`
+    console.log(document.querySelector('#burgerButtonIcon').src)
+
+    if (document.querySelector('#burgerMenu').classList.contains('active')) {
+      document.querySelector('#burgerButtonIcon').src = `assets/images/close-burger-${activeTheme}.svg`
+    } else {
+      document.querySelector('#burgerButtonIcon').src = `assets/images/burger-${activeTheme}.svg`
+    }
+
     if (document.querySelector('#iconCoffeeBean')) {
       document.querySelector('#iconCoffeeBean').src = `assets/images/coffee-bean-${activeTheme}.svg`;
       document.querySelector('#iconBakery').src = `assets/images/bakery-${activeTheme}.svg`;
@@ -81,3 +90,24 @@ if (document.querySelector('#specialOffers')) {
   }
 }
   
+function openBurger() {
+}
+
+document.querySelector('#burgerButton').addEventListener('click', () => {
+  let activeTheme = localStorage.getItem('theme');
+
+  if (document.querySelector('#burgerButtonIcon').src.endsWith(`/burger-${activeTheme}.svg`)) {
+    document.querySelector('#burgerButtonIcon').src = `assets/images/close-burger-${activeTheme}.svg`
+  } else {
+    document.querySelector('#burgerButtonIcon').src = `assets/images/burger-${activeTheme}.svg`
+  }
+  document.querySelector('#burgerMenu').classList.toggle('active');
+})
+
+document.querySelectorAll('.burger-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('#burgerMenu').classList.remove('active');
+    document.querySelector('#burgerButtonIcon').src = `assets/images/burger-${localStorage.getItem('theme')}.svg`
+
+  })
+})

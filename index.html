@@ -12,7 +12,7 @@
     <div class="flex-row main-container header__container">
       <h1 class="font-title-1"><a href="index.html">CoffeeShop</a></h1>
       <nav class="desktop">
-        <ul class="flex-row gap-60">
+        <ul class="flex-row gap-60 header-nav">
           <li><a class="font-body accent-text" href="#menu">Menu</a></li>
           <li><a class="font-body accent-text" href="#specialOffers">Special Offers</a></li>
           <li><a class="font-body accent-text" href="#aboutUs">About Us</a></li>
@@ -21,11 +21,22 @@
       </nav>
       <div class="flex-row gap-30">
         <button class="main-button desktop" onclick="window.location.href='menu.html'">Menu</button>
+        <button class="icon-button burger-button" id="burgerButton"><img src="assets/images/burger-light.svg" alt="Burger Menu" id="burgerButtonIcon"></button>
         <button class="icon-button" onclick="changeTheme()" id="themeButton"><img src="assets/images/dark-theme.svg" alt="Change theme" id="themeButtonIcon"></button>
       </div>
     </div>
   </header>
   <main class="flex-col gap-70">
+    <div id="burgerMenu" class="burger-menu main-container drop-shadow">
+      <nav>
+        <ul class="flex-col gap-20 header-nav">
+          <li><a class="font-title-2 accent-text burger-link" href="index.html#menu">Menu</a></li>
+          <li><a class="font-title-2 accent-text burger-link" href="index.html#specialOffers">Special Offers</a></li>
+          <li><a class="font-title-2 accent-text burger-link" href="index.html#aboutUs">About Us</a></li>
+          <li><a class="font-title-2 accent-text burger-link" href="index.html#visitUs">Visit Us</a></li>
+        </ul>
+      </nav>
+    </div>
     <section class="hero" id="hero">
       <div class="flex-col gap-40 main-container">
         <div class="flex-col gap-20 hero__info">
@@ -172,7 +183,7 @@
   </main>
   <footer class="footer">
     <div class="flex-row main-container">
-      <div class="flex-col gap-10">
+      <div class="flex-col gap-20">
         <p class="font-title-1 white-text">CoffeeShop</p>
         <ul class="flex-col gap-10">
           <li><p class="font-body white-text">7:30 AM – 8:00 PM</p></li>
