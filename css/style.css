@@ -226,7 +226,7 @@ h1 a {
 .hero {
   height: 580px;
   background-color: var(--color-gray);
-  background-image: url(/assets/images/hero-bg.jpg);
+  background-image: url(./assets/images/hero-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
