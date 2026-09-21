@@ -388,7 +388,7 @@ h1 a {
     border-radius: 20px;
   }
 
-  .carousel__item {
+  .slide {
     width: 100%;
   }
 
@@ -405,7 +405,7 @@ h1 a {
   border-radius: 100px;
 }
 
-.carousel__indicator--active {
+.carousel__indicator.active {
   background-color: var(--color-second-background);
 }
 
@@ -670,7 +670,7 @@ button {
       height: 500px;
     }
   }
-  .carousel__item{
+  .slide{
     flex-direction: column;
     
   }

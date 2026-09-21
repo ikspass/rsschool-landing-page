@@ -73,21 +73,20 @@
         <h1 class="font-title-1">Special Offers</h1>
         <div class="flex-col gap-20 special-offers__carousel">
           <div class="flex-row gap-20 carousel__viewport">
-            <button class="icon-button tablet"><</button>
-            <div class="flex-row gap-30 carousel__item">
-              <div class="image-wrapper">
-                <img src="assets/images/morning-coffee-discount.jpg" alt="Morning Coffee Discount">
+            <button class="icon-button tablet" id="leftButton"><</button>
+              <div class="flex-row gap-30 slide">
+                <div class="image-wrapper">
+                  <img id="slideImg" src="assets/images/morning-coffee-discount.jpg" alt="Morning Coffee Discount">
+                </div>
+                <div class="flex-col gap-10">
+                  <h2 class="font-title-2 accent-text" id="slideTitle">Morning Coffee Discount</h2>
+                  <p class="font-body" id="slideDescription">Start your day with a refreshing coffee! Order any coffee before 11:00 and get a 20% discount on fresh pastries. The perfect combination for a morning mood!</p>
+                </div>
               </div>
-              <div class="flex-col gap-10">
-                <h2 class="font-title-2 accent-text">Morning Coffee Discount</h2>
-                <p class="font-body">Start your day with a refreshing coffee! Order any coffee before 11:00 and get a 20% discount on fresh pastries. The perfect combination for a morning mood!</p>
-              </div>
-            </div>
-            <button class="icon-button tablet">></button>
+            <button class="icon-button tablet" id="rightButton">></button>
           </div>
-          <div class="flex-row gap-10">
-            <div class="carousel__indicator carousel__indicator--active"></div>
-            <div class="carousel__indicator"></div>
+          <div class="flex-row gap-10" id="sliderIndicators">
+            <div class="carousel__indicator active"></div>
             <div class="carousel__indicator"></div>
           </div>
         </div>
