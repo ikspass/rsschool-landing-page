@@ -1,11 +1,11 @@
 @font-face {
   font-family: Roboto;
-  src: url(/assets/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+  src: url(../assets/fonts/Roboto-VariableFont_wdth\,wght.ttf);
 }
 
 @font-face {
   font-family: Montserrat;
-  src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
+  src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
 
 html {
@@ -226,7 +226,7 @@ h1 a {
 .hero {
   height: 580px;
   background-color: var(--color-gray);
-  background-image: url(./assets/images/hero-bg.jpg);
+  background-image: url(../assets/images/hero-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
