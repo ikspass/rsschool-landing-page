@@ -68,26 +68,17 @@ function closeModalWindow() {
   document.querySelector('#modalWindow').classList.remove('active');
   document.querySelector('#backdrop').classList.remove('active');
   document.querySelector('#body').style.overflow = 'visible';
-
-  console.log('closeModal')
 }
-
-document.querySelector('#backdrop').addEventListener('click', () => {
-  // closeModalWindow();
-})
 
 function showModalWindow(id) {
   document.querySelector('#modalWindow').classList.add('active');
   document.querySelector('#backdrop').classList.add('active');
   document.querySelector('#body').style.overflow = 'hidden';
 
-  console.log('showModal')
-
   previews[activeMenuPage].forEach(elem => {
 
     if (elem.id == id) {
       selectedItem = elem;
-      console.log(selectedItem)
 
       modalWindow.innerHTML = `
         <div class="image-wrapper">
@@ -128,6 +119,17 @@ function showModalWindow(id) {
     `
     }
   });
+
+  const modalButtons = document.querySelectorAll('.modal-button');
+  modalButtons.forEach(elem => {
+    elem.addEventListener('click', () => {
+      modalButtons.forEach(button => {
+        button.classList.remove('active');
+      })
+      changePrice(elem.id);
+      elem.classList.add('active');
+    })
+  })
 }
 
 function resetElements(){
@@ -183,14 +185,6 @@ setsPin.addEventListener('click', () => {
   }
 })
 
-const modalButtons = document.querySelectorAll('.model-button');
-modalButtons.forEach(elem => {
-  elem.addEventListener('click', (target) => {
-    changePrice(target.id)
-    console.log(target)
-  })
-})
-
 function changePrice(size) {
-  document.querySelector('#totalPrice').textContent = selectedItem.price[size];
+  document.querySelector('#totalPrice').textContent = `$ ${selectedItem.price[size]}`;
 }
