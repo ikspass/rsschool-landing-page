@@ -93,7 +93,7 @@ function showModalWindow(id) {
         <div class="flex-col gap-20 modal-window__info">
           <div class="flex-row gap-20 modal-window__title">
             <div class="flex-col gap-10">
-              <h2 class="font-title-2 accent-text">${elem.name}</h2>
+              <h3 class="font-title-2 accent-text">${elem.name}</h3>
               <p class="font-body">${elem.description}</p>
             </div>
             <button class="icon-button font-title-2" onclick="closeModalWindow()">x</button>
