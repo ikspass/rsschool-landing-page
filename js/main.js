@@ -10,7 +10,6 @@ function changeTheme() {
       resetTheme();
     }
   }
-  console.log(localStorage.getItem('theme'))
 }
 
 
@@ -21,7 +20,6 @@ function resetTheme() {
   } else {
     document.querySelector('#body').className = activeTheme;
     document.querySelector('#themeButtonIcon').src = `assets/images/${activeTheme}-theme.svg`
-    console.log(document.querySelector('#burgerButtonIcon').src)
 
     if (document.querySelector('#burgerMenu').classList.contains('active')) {
       document.querySelector('#burgerButtonIcon').src = `assets/images/close-burger-${activeTheme}.svg`

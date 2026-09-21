@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/images/favicon.ico">
-  <title>Landing Page</title>
+  <title>CoffeeShop</title>
 </head>
 <body id="body" class="light">
   <header class="header drop-shadow">
@@ -13,7 +13,7 @@
       <h1 class="font-title-1"><a href="index.html">CoffeeShop</a></h1>
       <nav class="desktop">
         <ul class="flex-row gap-60 header-nav">
-          <li><a class="font-body accent-text" href="#menu">Menu</a></li>
+          <li><a class="font-body accent-text" href="#menu">Categories</a></li>
           <li><a class="font-body accent-text" href="#specialOffers">Special Offers</a></li>
           <li><a class="font-body accent-text" href="#aboutUs">About Us</a></li>
           <li><a class="font-body accent-text" href="#visitUs">Visit Us</a></li>
@@ -30,7 +30,7 @@
     <div id="burgerMenu" class="burger-menu main-container drop-shadow">
       <nav>
         <ul class="flex-col gap-20 header-nav">
-          <li><a class="font-title-2 accent-text burger-link" href="index.html#menu">Menu</a></li>
+          <li><a class="font-title-2 accent-text burger-link" href="index.html#menu">Categories</a></li>
           <li><a class="font-title-2 accent-text burger-link" href="index.html#specialOffers">Special Offers</a></li>
           <li><a class="font-title-2 accent-text burger-link" href="index.html#aboutUs">About Us</a></li>
           <li><a class="font-title-2 accent-text burger-link" href="index.html#visitUs">Visit Us</a></li>
@@ -48,12 +48,12 @@
     </section>
     <section class="flex-col gap-40 main-container menu drop-shadow" id="menu">
       <div class="flex-col gap-10">
-        <h2 class="font-title-1">Menu</h2>
+        <h2 class="font-title-1">Categories</h2>
         <p class="font-title-2">What will you wish for?</p>
       </div>
       <div class="flex-row menu__categories">
         <div class="flex-col gap-20 menu__category">
-          <a href="menu.html">
+          <a href="menu.html?category=drinks">
             <div class="image-wrapper">
               <img src="assets/images/drinks.jpg" alt="Drinks category">
             </div>
@@ -61,7 +61,7 @@
           <p class="font-body accent-text">Drinks</p>
         </div>
         <div class="flex-col gap-20  menu__category">
-          <a href="menu.html">
+          <a href="menu.html?category=desserts">
             <div class="image-wrapper">
               <img src="assets/images/desserts.jpg" alt="Desserts category">
             </div>
@@ -69,7 +69,7 @@
           <p class="font-body accent-text">Desserts</p>
         </div>
         <div class="flex-col gap-20  menu__category">
-          <a href="menu.html">
+          <a href="menu.html?category=sets">
             <div class="image-wrapper">
               <img src="assets/images/desserts-for-two-set.jpg" alt="Sets category">
             </div>

@@ -445,6 +445,10 @@ button {
   cursor: pointer;
 }
 
+.menu-title {
+  text-transform: capitalize;
+}
+
 .menu-section-heading {
   display: flex;
   gap: 50px;

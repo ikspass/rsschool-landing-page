@@ -4,6 +4,12 @@ let selectedItem = {};
 
 const menuGrid = document.querySelector('#menuGrid')
 
+const urlParams = new URLSearchParams(window.location.search);
+let activeMenuPage = urlParams.get('category') || 'drinks';
+document.querySelector('#menuTitle').textContent = activeMenuPage;
+document.querySelector(`#${activeMenuPage}Pin`).classList.add('active');
+
+
 fetch('./js/menu.json')
 .then(response => response.json())
 .then(data => {
@@ -142,8 +148,6 @@ function resetElements(){
     refreshButton.style.display = 'flex';
   }
 }
-
-let activeMenuPage = 'drinks';
 
 let drinksPin = document.querySelector('#drinksPin');
 let dessertsPin = document.querySelector('#dessertsPin');
