@@ -11,7 +11,6 @@ function changeTheme() {
   }
 }
 
-
 function resetTheme() {
   let activeTheme = localStorage.getItem('theme');
   if (!activeTheme) {
@@ -125,9 +124,6 @@ if (document.querySelector('#specialOffers')) {
       y1 = null;
     }
   }
-}
-  
-function openBurger() {
 }
 
 document.querySelector('#burgerButton').addEventListener('click', () => {
