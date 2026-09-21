@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/images/favicon.ico">
+  <title>CoffeeShop - Menu</title>
+</head>
+<body id="body" class="light">
+  <header class="header drop-shadow">
+    <div class="flex-row main-container header__container">
+      <h1 class="font-title-1"><a href="index.html">CoffeeShop</a></h1>
+      <nav class="desktop">
+        <ul class="flex-row gap-60 header-nav">
+          <li><a class="font-body accent-text" href="index.html#menu">Categories</a></li>
+          <li><a class="font-body accent-text" href="index.html#specialOffers">Special Offers</a></li>
+          <li><a class="font-body accent-text" href="index.html#aboutUs">About Us</a></li>
+          <li><a class="font-body accent-text" href="index.html#visitUs">Visit Us</a></li>
+        </ul>
+      </nav>
+      <div class="flex-row gap-30">
+        <button class="main-button desktop" onclick="window.location.href='menu.html'">Menu</button>
+        <button class="icon-button burger-button" id="burgerButton"><img src="assets/images/burger-light.svg" alt="Burger Menu" id="burgerButtonIcon"></button>
+        <button class="icon-button" onclick="changeTheme()" id="themeButton"><img src="assets/images/dark-theme.svg" alt="Change theme" id="themeButtonIcon"></button>
+      </div>
+    </div>
+  </header>
+  <main class="flex-col gap-30">
+    <div id="burgerMenu" class="burger-menu main-container drop-shadow">
+      <nav>
+        <ul class="flex-col gap-20 header-nav">
+          <li><a class="font-title-2 accent-text" href="index.html#menu">Categories</a></li>
+          <li><a class="font-title-2 accent-text" href="index.html#specialOffers">Special Offers</a></li>
+          <li><a class="font-title-2 accent-text" href="index.html#aboutUs">About Us</a></li>
+          <li><a class="font-title-2 accent-text" href="index.html#visitUs">Visit Us</a></li>
+          <li>
+            <button class="main-button burger-link" onclick="window.location.href='menu.html'">Menu</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="backdrop" id="backdrop">
+      <div class="flex-row gap-20 modal-window drop-shadow" id="modalWindow">
+      </div>
+    </div>
+    <section class="main-container top-section">
+      <div class="flex-col gap-10">
+        <h2 class="font-title-1">Menu</h2>
+        <p class="font-title-2">What will you wish for?</p>
+      </div>
+    </section>
+    <div class="main-container flex-row gap-30 pins">
+      <button class="pin" id="drinksPin">Drinks</button>
+      <button class="pin" id="dessertsPin">Desserts</button>
+      <button class="pin" id="setsPin">Sets</button>
+    </div>
+    <section class="menu-grid-section">
+      <div class="menu-section-heading">
+        <div class="menu-section-heading-line left"></div>
+        <h2 class="font-title-1 menu-title" id="menuTitle">Drinks</h2>
+        <div class="menu-section-heading-line right"></div>
+      </div>
+      <div class="flex-col gap-30 main-container">
+        <div class="flex-row gap-30 menu-grid" id="menuGrid">
+        </div>
+        <button class="icon-button" id="refreshButton"><img id="refreshButtonIcon" src="assets/images/refresh-light.svg" alt=""></button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="flex-row main-container">
+      <div class="flex-col gap-20">
+        <p class="font-title-1 white-text">CoffeeShop</p>
+        <ul class="flex-col gap-10">
+          <li><p class="font-body white-text">7:30 AM – 8:00 PM</p></li>
+          <li><a target="_blank" href="https://maps.app.goo.gl/vK4vZaT15pXgo4U5A" class="font-body white-text">742 Evergreen Terrace, Brooklyn, NY 11211</a></li>
+          <li><a target="_blank" href="mailto:coffeeshop@gmail.com" class="font-body white-text">coffeeshop@gmail.com</a></li>
+          <li><a target="_blank" href="tel:+912637342218" class="font-body white-text">+91 26373-42218</a></li>
+        </ul>
+      </div>
+      <p class="font-body white-text">© 2026 CoffeeShop</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

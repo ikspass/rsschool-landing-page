@@ -1,0 +1,20 @@
+[
+  {
+    "id": "0",
+    "img": "morning-coffee-discount.jpg",
+    "name": "Morning Coffee Discount",
+    "description": "Start your day with a refreshing coffee! Order any coffee before 11:00 and get a 20% discount on fresh pastries. The perfect combination for a morning mood!"
+  },
+  {
+    "id": "1",
+    "img": "friday-dessert-promotion.jpg",
+    "name": "Friday Dessert Promotion",
+    "description": "Order any dessert and get a 15% discount on the second one! A great opportunity to try something new or share your favorite dessert with a friend. This offer is valid only on Fridays."
+  },
+  {
+    "id": "2",
+    "img": "dinner-with-dessert.jpg",
+    "name": "Dinner With Dessert",
+    "description": "Order any main dish and get a dessert for free! Choose one of our popular desserts: cheesecake with strawberry or tiramisu. A great way to end your lunch or dinner!"
+  }
+]
