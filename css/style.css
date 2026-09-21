@@ -202,8 +202,14 @@ h1 a {
   justify-content: center;
 }
 
+.menu-grid-section{
+  .main-container{
+    align-items: center;
+  }
+}
+
 .icon-button img {
-  width: 25px;
+  width: 20px;
 }
 
 .icon-button:hover{

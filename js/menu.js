@@ -21,28 +21,45 @@ fetch('./js/menu.json')
   resetElements();
 })
 
-function showElements() {
-  previews[activeMenuPage].forEach(elem => {
-    let item = document.createElement('div');
+const refreshButton = document.querySelector('#refreshButton');
 
-    item.className = 'flex-col gap-20 menu-item drop-shadow';
-    item.innerHTML = `
-        <div class="image-wrapper">
-          <img src="assets/images/${elem.img}" alt="${elem.name}">
-        </div>
-        <div class="flex-col gap-10">
-          <h3 class="font-title-2 accent-text">${elem.name}</h3>
-          <p class="font-body">${elem.description}</p>
-          <span class="font-title-2">$ ${elem.category == 'drinks' ? elem.price.s : elem.price}</span>
-        </div>
-    `;
+refreshButton.addEventListener('click', () => {
+  showOtherElements();
+  refreshButton.style.display = 'none'
+})
 
-    item.addEventListener('click', () => {
-      showModalWindow(elem.id);
-    })
-    
-    menuGrid.appendChild(item);
+function showFisrtThreeElements() {
+  for (let i = 0; i < 3; i += 1) {
+    showElement(previews[activeMenuPage][i]);
+  }
+}
+
+function showOtherElements() {
+  for (let i = 3; i < previews[activeMenuPage].length; i += 1) {
+    showElement(previews[activeMenuPage][i]);
+  }
+}
+
+function showElement(elem) {
+  let item = document.createElement('div');
+
+  item.className = 'flex-col gap-20 menu-item drop-shadow';
+  item.innerHTML = `
+      <div class="image-wrapper">
+        <img src="assets/images/${elem.img}" alt="${elem.name}">
+      </div>
+      <div class="flex-col gap-10">
+        <h3 class="font-title-2 accent-text">${elem.name}</h3>
+        <p class="font-body">${elem.description}</p>
+        <span class="font-title-2">$ ${elem.category == 'drinks' ? elem.price.s : elem.price}</span>
+      </div>
+  `;
+
+  item.addEventListener('click', () => {
+    showModalWindow(elem.id);
   })
+  
+  menuGrid.appendChild(item);
 }
 
 const modalWindow = document.querySelector('#modalWindow')
@@ -79,7 +96,7 @@ function showModalWindow(id) {
         <div class="flex-col gap-10 modal-window__info">
           <div class="flex-row gap-20 modal-window__title">
             <div class="flex-col gap-10">
-              <h2 class="font-title-2">${elem.name}</h2>
+              <h2 class="font-title-2 accent-text">${elem.name}</h2>
               <p class="font-body">${elem.description}</p>
             </div>
             <button class="icon-button font-title-2" onclick="closeModalWindow()">x</button>
@@ -110,13 +127,18 @@ function showModalWindow(id) {
         </div>
     `
     }
-
   });
 }
 
 function resetElements(){
   menuGrid.innerHTML = '';
-  showElements();
+  showFisrtThreeElements();
+  if (previews[activeMenuPage].length <= 3) {
+    refreshButton.style.display = 'none';
+  }
+  else {
+    refreshButton.style.display = 'flex';
+  }
 }
 
 let activeMenuPage = 'drinks';
