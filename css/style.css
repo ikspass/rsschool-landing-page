@@ -28,6 +28,10 @@ body.dark {
   .drop-shadow {
     filter: drop-shadow(0px 5px 5px var(--clr-primitive-black-50));
   }
+
+  .backdrop {
+    background-color: var(--clr-primitive-black-80);
+  }
 }
 
 body.light {
@@ -45,6 +49,10 @@ body.light {
   
   .drop-shadow {
     filter: drop-shadow(0px 5px 5px var(--clr-primitive-light-brown-50));
+  }
+
+  .backdrop {
+    background-color: var(--clr-primitive-black-50);
   }
 }
 
@@ -74,6 +82,7 @@ section {
   --clr-primitive-beige: #E1D4C9;
   --clr-primitive-black: #29211d;
   --clr-primitive-black-50: #29211dbe;
+  --clr-primitive-black-80: #16120fbe;
 
   --color-text-main: var(--clr-primitive-black);
   --color-text-accent: var(--clr-primitive-light-brown);
@@ -178,7 +187,7 @@ h1 a {
 .header {
   background-color: var(--color-background);
   position: sticky;
-  z-index: 10;
+  z-index: 20;
   top: 0;
   transition: background-color 0.2s;
 }
@@ -475,8 +484,8 @@ h1 a {
   top: -100%;
   left: 50vw;
   transform: translateX(-50%);
-  z-index: 5;
-  transition: 0.3s;
+  z-index: 15;
+  transition: 0.2s;
 
   ul {
     list-style: none;
@@ -485,6 +494,36 @@ h1 a {
 
 .burger-button {
   display: none;
+}
+
+.burger-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.burger-line{
+  background-color: var(--color-buttons);
+  height: 2px;
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  transition: 0.2s;
+}
+.burger-line.top{
+  top: 5px;
+}
+.burger-line.bottom{
+  bottom: 5px;
+}
+
+.burger-button.active .burger-line.top{
+  rotate: 45deg;
+  top: 9px;
+}
+.burger-button.active .burger-line.bottom {
+  rotate: -45deg;
+  bottom: 9px;
 }
 
 .burger-menu.active {
@@ -577,7 +616,6 @@ button {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  background-color: var(--clr-primitive-black-50);
 }
 
 .backdrop.active {

@@ -12,7 +12,6 @@ let activeMenuPage = urlParams.get('category') || 'drinks';
 document.querySelector('#menuTitle').textContent = activeMenuPage;
 document.querySelector(`#${activeMenuPage}Pin`).classList.add('active');
 
-
 fetch('./js/products.json')
 .then(response => response.json())
 .then(data => {
@@ -37,128 +36,15 @@ refreshButton.addEventListener('click', () => {
   refreshButton.style.display = 'none'
 })
 
-function showFisrtThreeElements() {
-  for (let i = 0; i < 3; i += 1) {
-    showElement(previews[activeMenuPage][i]);
-  }
-}
-
-function showOtherElements() {
-  for (let i = 3; i < previews[activeMenuPage].length; i += 1) {
-    showElement(previews[activeMenuPage][i]);
-  }
-}
-
-function showElement(elem) {
-  let item = document.createElement('div');
-
-  item.className = 'flex-col gap-20 menu-item drop-shadow';
-  item.innerHTML = `
-      <div class="image-wrapper">
-        <img src="assets/images/${elem.img}" alt="${elem.name}">
-      </div>
-      <div class="flex-col gap-10" style="height: 100%">
-        <h3 class="font-title-2 accent-text">${elem.name}</h3>
-        <div class="flex-col gap-10" style="justify-content: space-between; height: 100%">
-          <p class="font-body">${elem.description}</p>
-          <span style="align-self: flex-end" class="font-title-2">$ ${elem.price}</span>
-        </div>
-      </div>
-  `;
-
-  item.addEventListener('click', () => {
-    showModalWindow(elem.id);
-  })
-  
-  menuGrid.appendChild(item);
-}
-
 const modalWindow = document.querySelector('#modalWindow')
 
-function closeModalWindow() {
-  document.querySelector('#modalWindow').classList.remove('active');
-  document.querySelector('#backdrop').classList.remove('active');
-  document.querySelector('#body').style.overflow = 'visible';
-}
-
-function showModalWindow(id) {
-  document.querySelector('#modalWindow').classList.add('active');
-  document.querySelector('#backdrop').classList.add('active');
-  document.querySelector('#body').style.overflow = 'hidden';
-
-  selectedItem = previews[activeMenuPage].find(item => item.id == id)
-
-  if (selectedItem.category !== 'sets') {
-    additives = selectedItem.additives;
-    sizes = selectedItem.sizes;
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    if (modalWindow.classList.contains('active')) {
+      closeModalWindow();
+    }
   }
-
-  modalWindow.innerHTML = `
-        <div class="image-wrapper">
-          <img src="assets/images/${selectedItem.img}" alt="${selectedItem.name}">
-        </div>
-        <div class="flex-col gap-20 modal-window__info">
-          <div class="flex-row gap-20 modal-window__title">
-            <div class="flex-col gap-10">
-              <h3 class="font-title-2 accent-text">${selectedItem.name}</h3>
-              <p class="font-body">${selectedItem.description}</p>
-            </div>
-            <button class="icon-button font-title-2" onclick="closeModalWindow()">x</button>
-          </div>
-          ${selectedItem.category !== 'sets' ?
-            `<div class="modal-separator"></div>` : ''}
-          <div class="flex-col gap-10 modal-window__buttons">
-          ${selectedItem.category !== 'sets' ?
-            `<span class="font-caption modal-window__caption">Size</span>
-              <div class="flex-row gap-20">
-                <button class="modal-button modal-size active" id="s">S - ${sizes.s.size}</button>
-                <button class="modal-button modal-size" id="m">M - ${sizes.m.size}</button>
-                <button class="modal-button modal-size" id="l">L - ${sizes.l.size}</button>
-              </div>
-              <span class="font-caption modal-window__caption">Additives</span>
-              <div class="flex-row gap-20">
-                ${additives.map(item => `<button class="modal-button modal-additive" id="${item.name.toLowerCase()}">${item.name}</button>`).join('')}
-              </div>
-            ` : ''}
-          </div>
-          <div class="modal-separator"></div>
-          <div class="flex-row modal-window__total">
-            <span class="font-title-2">Total:</span>
-            <span class="font-title-2" id="totalPrice">$ ${selectedItem.price}</span>
-          </div>
-        </div>
-    `
-
-  const sizeButtons = document.querySelectorAll('.modal-size');
-  sizeButtons.forEach(elem => {
-    elem.addEventListener('click', () => {
-      sizeButtons.forEach(button => {
-        button.classList.remove('active');
-      })
-      elem.classList.add('active');
-      changePrice();
-    })
-  })
-
-  const additiveButtons = document.querySelectorAll('.modal-additive');
-  additiveButtons.forEach(elem => {
-    elem.addEventListener('click', () => {
-      elem.classList.toggle('active');
-      changePrice();
-    })
-  })
-}
-
-function resetElements(){
-  menuGrid.innerHTML = '';
-  showFisrtThreeElements();
-  if (previews[activeMenuPage].length <= 3) {
-    refreshButton.style.display = 'none';
-  }
-  else {
-    refreshButton.style.display = 'flex';
-  }
-}
+})
 
 let drinksPin = document.querySelector('#drinksPin');
 let dessertsPin = document.querySelector('#dessertsPin');
@@ -212,4 +98,133 @@ function changePrice() {
     .find(additive => additive.name.toLowerCase() == item.id)['add-price'])
 
   document.querySelector('#totalPrice').textContent = `$ ${currentPrice.toFixed(2)}`;
+}
+
+function blockScroll() {
+  document.querySelector('#backdrop').classList.add('active');
+  document.querySelector('#body').style.overflow = 'hidden';
+}
+
+function unblockScroll() {
+  document.querySelector('#backdrop').classList.remove('active');
+  document.querySelector('#body').style.overflow = 'visible';
+}
+
+function resetElements(){
+  menuGrid.innerHTML = '';
+  showFisrtThreeElements();
+  if (previews[activeMenuPage].length <= 3) {
+    refreshButton.style.display = 'none';
+  }
+  else {
+    refreshButton.style.display = 'flex';
+  }
+}
+
+function showFisrtThreeElements() {
+  for (let i = 0; i < 3; i += 1) {
+    showElement(previews[activeMenuPage][i]);
+  }
+}
+
+function showOtherElements() {
+  for (let i = 3; i < previews[activeMenuPage].length; i += 1) {
+    showElement(previews[activeMenuPage][i]);
+  }
+}
+
+function showElement(elem) {
+  let item = document.createElement('div');
+
+  item.className = 'flex-col gap-20 menu-item drop-shadow';
+  item.innerHTML = `
+      <div class="image-wrapper">
+        <img src="assets/images/${elem.img}" alt="${elem.name}">
+      </div>
+      <div class="flex-col gap-10" style="height: 100%">
+        <h3 class="font-title-2 accent-text">${elem.name}</h3>
+        <div class="flex-col gap-10" style="justify-content: space-between; height: 100%">
+          <p class="font-body">${elem.description}</p>
+          <span style="align-self: flex-end" class="font-title-2">$ ${elem.price}</span>
+        </div>
+      </div>
+  `;
+
+  item.addEventListener('click', () => {
+    showModalWindow(elem.id);
+  })
+  
+  menuGrid.appendChild(item);
+}
+
+function closeModalWindow() {
+  document.querySelector('#modalWindow').classList.remove('active');
+  unblockScroll();
+}
+
+function showModalWindow(id) {
+  document.querySelector('#modalWindow').classList.add('active');
+  blockScroll();
+
+  selectedItem = previews[activeMenuPage].find(item => item.id == id)
+
+  if (selectedItem.category !== 'sets') {
+    additives = selectedItem.additives;
+    sizes = selectedItem.sizes;
+  }
+
+  modalWindow.innerHTML = `
+    <div class="image-wrapper">
+      <img src="assets/images/${selectedItem.img}" alt="${selectedItem.name}">
+    </div>
+    <div class="flex-col gap-20 modal-window__info">
+      <div class="flex-row gap-20 modal-window__title">
+        <div class="flex-col gap-10">
+          <h3 class="font-title-2 accent-text">${selectedItem.name}</h3>
+          <p class="font-body">${selectedItem.description}</p>
+        </div>
+        <button class="icon-button font-title-2" onclick="closeModalWindow()">x</button>
+      </div>
+      ${selectedItem.category !== 'sets' ?
+        `<div class="modal-separator"></div>` : ''}
+      <div class="flex-col gap-10 modal-window__buttons">
+      ${selectedItem.category !== 'sets' ?
+        `<span class="font-caption modal-window__caption">Size</span>
+          <div class="flex-row gap-20" style="flex-wrap: wrap; row-gap: 10px">
+            <button class="modal-button modal-size active" id="s">S - ${sizes.s.size}</button>
+            <button class="modal-button modal-size" id="m">M - ${sizes.m.size}</button>
+            <button class="modal-button modal-size" id="l">L - ${sizes.l.size}</button>
+          </div>
+          <span class="font-caption modal-window__caption">Additives</span>
+          <div class="flex-row gap-20" style="flex-wrap: wrap; row-gap: 10px">
+            ${additives.map(item => `<button class="modal-button modal-additive" id="${item.name.toLowerCase()}">${item.name}</button>`).join('')}
+          </div>
+        ` : ''}
+      </div>
+      <div class="modal-separator"></div>
+      <div class="flex-row modal-window__total">
+        <span class="font-title-2">Total:</span>
+        <span class="font-title-2" id="totalPrice">$ ${selectedItem.price}</span>
+      </div>
+    </div>
+    `
+
+  const sizeButtons = document.querySelectorAll('.modal-size');
+  sizeButtons.forEach(elem => {
+    elem.addEventListener('click', () => {
+      sizeButtons.forEach(button => {
+        button.classList.remove('active');
+      })
+      elem.classList.add('active');
+      changePrice();
+    })
+  })
+
+  const additiveButtons = document.querySelectorAll('.modal-additive');
+  additiveButtons.forEach(elem => {
+    elem.addEventListener('click', () => {
+      elem.classList.toggle('active');
+      changePrice();
+    })
+  })
 }

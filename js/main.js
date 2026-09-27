@@ -1,40 +1,20 @@
-function changeTheme() {
-  let activeTheme = localStorage.getItem('theme');
-  if (activeTheme) {
-    if (activeTheme === 'dark') {
-      localStorage.setItem('theme', 'light');
-      resetTheme();
-    } else {
-      localStorage.setItem('theme', 'dark'); 
-      resetTheme();
-    }
-  }
-}
-
-function resetTheme() {
-  let activeTheme = localStorage.getItem('theme');
-  if (!activeTheme) {
-    localStorage.setItem('theme', 'light');
+document.querySelector('#burgerButton').addEventListener('click', () => {
+  if (document.querySelector('#burgerMenu').classList.contains('active')) {
+    unblockScroll();
   } else {
-    document.querySelector('#body').className = activeTheme;
-    document.querySelector('#themeButtonIcon').src = `assets/images/${activeTheme}-theme.svg`
-
-    if (document.querySelector('#burgerMenu').classList.contains('active')) {
-      document.querySelector('#burgerButtonIcon').src = `assets/images/close-burger-${activeTheme}.svg`
-    } else {
-      document.querySelector('#burgerButtonIcon').src = `assets/images/burger-${activeTheme}.svg`
-    }
-
-    if (document.querySelector('#iconCoffeeBean')) {
-      document.querySelector('#iconCoffeeBean').src = `assets/images/coffee-bean-${activeTheme}.svg`;
-      document.querySelector('#iconBakery').src = `assets/images/bakery-${activeTheme}.svg`;
-      document.querySelector('#iconSmile').src = `assets/images/smile-${activeTheme}.svg`;
-    }
-    if (document.querySelector('#refreshButton')) {
-      document.querySelector('#refreshButtonIcon').src = `assets/images/refresh-${activeTheme}.svg`;
-    }
+    blockScroll();
   }
-}
+  document.querySelector('#burgerButton').classList.toggle('active');
+  document.querySelector('#burgerMenu').classList.toggle('active');
+})
+
+document.querySelectorAll('.burger-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('#burgerMenu').classList.remove('active');
+    document.querySelector('#burgerButton').classList.remove('active')
+    unblockScroll();
+  })
+})
 
 resetTheme();
 
@@ -116,6 +96,48 @@ if (document.querySelector('#specialOffers')) {
   touchScroll();
 }
 
+function blockScroll() {
+  document.querySelector('#backdrop').classList.add('active');
+  document.querySelector('#body').style.overflow = 'hidden';
+}
+
+function unblockScroll() {
+  document.querySelector('#backdrop').classList.remove('active');
+  document.querySelector('#body').style.overflow = 'visible';
+}
+
+function changeTheme() {
+  let activeTheme = localStorage.getItem('theme');
+  if (activeTheme) {
+    if (activeTheme === 'dark') {
+      localStorage.setItem('theme', 'light');
+      resetTheme();
+    } else {
+      localStorage.setItem('theme', 'dark'); 
+      resetTheme();
+    }
+  }
+}
+
+function resetTheme() {
+  let activeTheme = localStorage.getItem('theme');
+  if (!activeTheme) {
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.querySelector('#body').className = activeTheme;
+    document.querySelector('#themeButtonIcon').src = `assets/images/${activeTheme}-theme.svg`
+
+    if (document.querySelector('#iconCoffeeBean')) {
+      document.querySelector('#iconCoffeeBean').src = `assets/images/coffee-bean-${activeTheme}.svg`;
+      document.querySelector('#iconBakery').src = `assets/images/bakery-${activeTheme}.svg`;
+      document.querySelector('#iconSmile').src = `assets/images/smile-${activeTheme}.svg`;
+    }
+    if (document.querySelector('#refreshButton')) {
+      document.querySelector('#refreshButtonIcon').src = `assets/images/refresh-${activeTheme}.svg`;
+    }
+  }
+}
+
 function touchScroll() {
   if (window.matchMedia("(max-width: 800px)").matches){
     document.addEventListener('touchstart', handleTouchStart, false);
@@ -153,22 +175,3 @@ function touchScroll() {
     }
   }
 }
-
-document.querySelector('#burgerButton').addEventListener('click', () => {
-  let activeTheme = localStorage.getItem('theme');
-
-  if (document.querySelector('#burgerButtonIcon').src.endsWith(`/burger-${activeTheme}.svg`)) {
-    document.querySelector('#burgerButtonIcon').src = `assets/images/close-burger-${activeTheme}.svg`
-  } else {
-    document.querySelector('#burgerButtonIcon').src = `assets/images/burger-${activeTheme}.svg`
-  }
-  document.querySelector('#burgerMenu').classList.toggle('active');
-})
-
-document.querySelectorAll('.burger-link').forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('#burgerMenu').classList.remove('active');
-    document.querySelector('#burgerButtonIcon').src = `assets/images/burger-${localStorage.getItem('theme')}.svg`
-
-  })
-})

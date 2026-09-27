@@ -21,12 +21,18 @@
       </nav>
       <div class="flex-row gap-30">
         <button class="main-button desktop" onclick="window.location.href='menu.html'">Menu</button>
-        <button class="icon-button burger-button" id="burgerButton"><img src="assets/images/burger-light.svg" alt="Burger Menu" id="burgerButtonIcon"></button>
+        <button class="icon-button burger-button" id="burgerButton">
+          <div class="flex-col burger-icon">
+            <div class="burger-line top"></div>
+            <div class="burger-line bottom"></div>
+          </div>
+        </button>
         <button class="icon-button" onclick="changeTheme()" id="themeButton"><img src="assets/images/dark-theme.svg" alt="Change theme" id="themeButtonIcon"></button>
       </div>
     </div>
   </header>
   <main class="flex-col gap-70">
+    <div class="backdrop" id="backdrop"></div>
     <div id="burgerMenu" class="burger-menu main-container drop-shadow">
       <nav>
         <ul class="flex-col gap-20 header-nav">
