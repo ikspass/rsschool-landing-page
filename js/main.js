@@ -40,49 +40,69 @@ resetTheme();
 
 if (document.querySelector('#specialOffers')) {
 
+  const slider = document.querySelector('#slider');
+
   let slides = [];
   let currentSlide = 0;
   const sliderIndicators = document.querySelector('#sliderIndicators');
+  const sliderContent = document.querySelector('#slides')
   
   fetch('./js/special-offers.json')
   .then(response => response.json())
   .then(data => {
     slides = data;
+
+    slides.forEach(slide => {
+      sliderContent.innerHTML += `
+        <div class="flex-row gap-30 slide">
+          <div class="image-wrapper">
+            <img id="slideImg" src="assets/images/${slide.img}" alt="Morning Coffee Discount">
+          </div>
+          <div class="flex-col gap-10">
+            <h3 class="font-title-2 accent-text" id="slideTitle">${slide.name}</h3>
+            <p class="font-body" id="slideDescription">${slide.description}</p>
+          </div>
+        </div>
+      `
+    })
+
     sliderIndicators.innerHTML = `<div class="carousel__indicator"></div>`.repeat(slides.length)
   
     document.querySelectorAll('.carousel__indicator')[0].classList.add('active');
   })
-  
-  const leftButton = document.querySelector('#leftButton');
-  const rightButton = document.querySelector('#rightButton');
-  const slideImg = document.querySelector('#slideImg');
-  const slideTitle = document.querySelector('#slideTitle');
-  const slideDescription = document.querySelector('#slideDescription');
-  
-  leftButton.addEventListener('click', () => {
-  if (currentSlide - 1 < 0) currentSlide = slides.length - 1;
-  else currentSlide -= 1;
-  resetSlide();
-  })
-  
-  rightButton.addEventListener('click', () => {
-  if (currentSlide + 1 >= slides.length) currentSlide = 0;
-  else currentSlide += 1;
-  resetSlide();
-  })
-  
-  function resetSlide() {
-    slideImg.src = `assets/images/${slides[currentSlide].img}`;
-    slideTitle.textContent = slides[currentSlide].name;
-    slideDescription.textContent = slides[currentSlide].description;
+
+  const sliderOffset = slider.offsetWidth;
+  let currentSlidePosition = 0;
+
+  function slideToLeft() {
+    if(currentSlidePosition + sliderOffset > 0){
+      currentSlidePosition = -sliderOffset * (slides.length - 1);
+      sliderContent.style.left = `${currentSlidePosition}px`;
+      currentSlide = slides.length - 1;
+    } else {
+      sliderContent.style.left = `${currentSlidePosition += sliderOffset}px`;
+      currentSlide -= 1;
+    }
+    resetIndicator();
+  }
+
+  function slideToRight() {
+    if (currentSlidePosition - sliderOffset <= -sliderOffset * slides.length){
+      currentSlidePosition = 0;
+      sliderContent.style.left = `${currentSlidePosition}px`;
+      currentSlide = 0;
+    } else {
+      sliderContent.style.left = `${currentSlidePosition -= sliderOffset}px`;
+      currentSlide += 1;
+    }
     resetIndicator();
   }
   
   function resetIndicator() {
-  document.querySelectorAll('.carousel__indicator').forEach(elem => {
-    elem.classList.remove('active')
-  })
-  document.querySelectorAll('.carousel__indicator')[currentSlide].classList.add('active');
+    document.querySelectorAll('.carousel__indicator').forEach(elem => {
+      elem.classList.remove('active')
+    })
+    document.querySelectorAll('.carousel__indicator')[currentSlide].classList.add('active');
   }
 
   if (window.matchMedia("(max-width: 800px)").matches){
@@ -110,14 +130,10 @@ if (document.querySelector('#specialOffers')) {
 
       if(Math.abs(xDiff)>Math.abs(yDiff)){
         if(xDiff > 0){
-          if (currentSlide - 1 < 0) currentSlide = slides.length - 1;
-          else currentSlide -= 1;
-          resetSlide();
+          slideToLeft();
         }
         else {
-          if (currentSlide + 1 >= slides.length) currentSlide = 0;
-          else currentSlide += 1;
-          resetSlide();
+          slideToRight();
         }
       }
       x1 = null;
@@ -144,4 +160,3 @@ document.querySelectorAll('.burger-link').forEach(link => {
 
   })
 })
-

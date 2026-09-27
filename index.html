@@ -87,17 +87,12 @@
         <h2 class="font-title-1">Special Offers</h2>
         <div class="flex-col gap-20 special-offers__carousel">
           <div class="flex-row gap-20 carousel__viewport">
-            <button class="icon-button tablet" id="leftButton">&lt;</button>
-              <div class="flex-row gap-30 slide">
-                <div class="image-wrapper">
-                  <img id="slideImg" src="assets/images/morning-coffee-discount.jpg" alt="Morning Coffee Discount">
-                </div>
-                <div class="flex-col gap-10">
-                  <h3 class="font-title-2 accent-text" id="slideTitle">Morning Coffee Discount</h3>
-                  <p class="font-body" id="slideDescription">Start your day with a refreshing coffee! Order any coffee before 11:00 and get a 20% discount on fresh pastries. The perfect combination for a morning mood!</p>
-                </div>
+            <button class="icon-button tablet" onclick="slideToLeft()" id="leftButton">&lt;</button>
+            <div class="slider" id="slider">
+              <div class="slides" id="slides">
               </div>
-            <button class="icon-button tablet" id="rightButton">&gt;</button>
+            </div>
+            <button class="icon-button tablet" onclick="slideToRight()" id="rightButton">&gt;</button>
           </div>
           <div class="flex-row gap-10" id="sliderIndicators">
             <div class="carousel__indicator active"></div>
