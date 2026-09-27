@@ -46,6 +46,14 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
+document.querySelector('#backdrop').addEventListener('click', (event) => {
+  if(event.target === event.currentTarget){
+    if (modalWindow.classList.contains('active')) {
+      closeModalWindow();
+    }
+  }
+})
+
 let drinksPin = document.querySelector('#drinksPin');
 let dessertsPin = document.querySelector('#dessertsPin');
 let setsPin = document.querySelector('#setsPin');

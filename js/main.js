@@ -10,13 +10,31 @@ document.querySelector('#burgerButton').addEventListener('click', () => {
 
 document.querySelectorAll('.burger-link').forEach(link => {
   link.addEventListener('click', () => {
-    document.querySelector('#burgerMenu').classList.remove('active');
-    document.querySelector('#burgerButton').classList.remove('active')
-    unblockScroll();
+    removeBurgerMenu();
   })
 })
 
 resetTheme();
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    if (document.querySelector('#burgerMenu').classList.contains('active')) {
+      removeBurgerMenu();
+    }
+  }
+})
+
+window.addEventListener('resize', () => {
+  if (!window.matchMedia("(max-width: 1000px)").matches) {
+    removeBurgerMenu();
+  }
+})
+
+function removeBurgerMenu() {
+  document.querySelector('#burgerButton').classList.remove('active');
+  document.querySelector('#burgerMenu').classList.remove('active');
+  unblockScroll();
+}
 
 if (document.querySelector('#specialOffers')) {
 
