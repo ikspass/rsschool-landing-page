@@ -71,7 +71,15 @@ if (document.querySelector('#specialOffers')) {
     document.querySelectorAll('.carousel__indicator')[0].classList.add('active');
   })
 
-  const sliderOffset = slider.offsetWidth;
+  let sliderOffset = slider.offsetWidth;
+
+  window.addEventListener('resize', () => {
+    sliderOffset = slider.offsetWidth;
+    currentSlidePosition = sliderOffset - sliderOffset * (currentSlide + 1)
+    sliderContent.style.left = `${currentSlidePosition}px`;
+    touchScroll();
+  })
+
   let currentSlidePosition = 0;
 
   function slideToLeft() {
@@ -105,6 +113,10 @@ if (document.querySelector('#specialOffers')) {
     document.querySelectorAll('.carousel__indicator')[currentSlide].classList.add('active');
   }
 
+  touchScroll();
+}
+
+function touchScroll() {
   if (window.matchMedia("(max-width: 800px)").matches){
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchmove', handleTouchMove, false);

@@ -1,146 +1,745 @@
 [
   {
     "id": "0",
+    "img": "irish-coffee.jpg",
+    "name": "Irish coffee",
+    "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    "price": "7.00",
     "category": "drinks",
-    "name": "Espresso",
-    "description": "Strong and rich espresso made from selected beans. Perfect for lovers of bold flavors and aromas.",
-    "price": {
-      "s": "3.00",
-      "m": "4.00",
-      "l": "5.00"
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
     },
-    "img": "espresso.jpg"
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Cinnamon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "1",
+    "img": "kahlua-coffee.jpg",
+    "name": "Kahlua coffee",
+    "description": "Classic coffee with milk and Kahlua liqueur under a cap of frothed milk",
+    "price": "7.00",
     "category": "drinks",
-    "name": "Vanilla Latte",
-    "description": "A delicate latte with vanilla syrup. This wonderful drink is perfect for a morning treat.",
-    "price": {
-      "s": "4.00",
-      "m": "5.00",
-      "l": "6.00"
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
     },
-    "img": "vanilla-latte.jpg"
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Cinnamon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "2",
+    "img": "honey-raf.jpg",
+    "name": "Honey raf",
+    "description": "Espresso with frothed milk, cream and aromatic honey",
+    "price": "5.50",
     "category": "drinks",
-    "name": "Black Tea with Lemon",
-    "description": "Refreshing black tea with lemon. It will energize you at any time of the day.",
-    "price": {
-      "s": "2.00",
-      "m": "3.00",
-      "l": "4.00"
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
     },
-    "img": "black-tea-with-lemon.jpg"
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Cinnamon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "3",
+    "img": "ice-cappuccino.jpg",
+    "name": "Ice cappuccino",
+    "description": "Cappuccino with soft thick foam in summer version with ice",
+    "price": "5.00",
     "category": "drinks",
-    "name": "Orange Fresh",
-    "description": "Refreshing orange juice made from fresh oranges. Perfect for a morning start.",
-    "price": {
-      "s": "5.00",
-      "m": "6.00",
-      "l": "7.00"
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
     },
-    "img": "orange-fresh.jpg"
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Cinnamon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "4",
+    "img": "espresso.jpg",
+    "name": "Espresso",
+    "description": "Classic black coffee",
+    "price": "4.50",
     "category": "drinks",
-    "name": "Strawberry Milkshake",
-    "description": "A gentle milkshake with fresh strawberries. A wonderful dessert for sweet tooths.",
-    "price": {
-      "s": "6.00",
-      "m": "7.00",
-      "l": "8.00"
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
     },
-    "img": "strawberry-milkshake.jpg"
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Cinnamon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "5",
-    "category": "desserts",
-    "name": "Tiramisu",
-    "description": "A classic Italian dessert made with delicate mascarpone and coffee. Perfect for coffee lovers.",
-    "price": "7.00",
-    "img": "tiramisu.jpg"
+    "img": "latte.jpg",
+    "name": "Latte",
+    "description": "Espresso coffee with the addition of steamed milk and dense milk foam",
+    "price": "5.50",
+    "category": "drinks",
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Cinnamon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "6",
-    "category": "desserts",
-    "name": "Cheesecake with Strawberry",
-    "description": "A delicate cheesecake made with creamy cheese and fresh strawberries. This dessert will add brightness and freshness to any meal.",
-    "price": "8.00",
-    "img": "cheesecake-with-strawberry.jpg"
+    "img": "latte-macchiato.jpg",
+    "name": "Latte macchiato",
+    "description": "Espresso with frothed milk and chocolate",
+    "price": "5.50",
+    "category": "drinks",
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Cinnamon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "7",
-    "category": "desserts",
-    "name": "Panna Cotta with Vanilla",
-    "description": "A light and airy dessert made with cream. It will surely surprise your taste and aroma.",
-    "price": "6.00",
-    "img": "panna-cotta-with-vanilla.jpg"
+    "img": "coffee-with-cognac.jpg",
+    "name": "Coffee with cognac",
+    "description": "Fragrant black coffee with cognac and whipped cream",
+    "price": "6.50",
+    "category": "drinks",
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Cinnamon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "8",
-    "category": "desserts",
-    "name": "Chocolate Mousse",
-    "description": "A delicate chocolate mousse with a rich chocolate flavor. Perfect for chocolate lovers.",
-    "price": "5.00",
-    "img": "chocolate-mousse.jpg"
+    "img": "moroccan.png",
+    "name": "Moroccan",
+    "description": "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
+    "price": "4.50",
+    "category": "drinks",
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Lemon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "9",
-    "category": "desserts",
-    "name": "French Macarons",
-    "description": "Delicate French macarons with various fillings. The perfect treat for tea or coffee.",
-    "price": "6.00",
-    "img": "french-macarons.jpg"
+    "img": "ginger.png",
+    "name": "Ginger",
+    "description": "Original black tea with fresh ginger, lemon and honey",
+    "price": "5.00",
+    "category": "drinks",
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Lemon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "10",
-    "category": "desserts",
-    "name": "Chocolate Cake with Raspberry",
-    "description": "A delicate chocolate cake soaked in raspberry syrup and topped with light cream. The perfect combination of sweetness and tartness that will delight all chocolate lovers.",
-    "price": "10.00",
-    "img": "chocolate-cake-with-raspberry.jpg"
+    "img": "cranberry.png",
+    "name": "Cranberry",
+    "description": "Invigorating black tea with cranberry and honey",
+    "price": "5.00",
+    "category": "drinks",
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Lemon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "11",
-    "category": "desserts",
-    "name": "Vanilla Cupcake with Berries",
-    "description": "A light and airy cupcake with juicy berries. Perfect for morning tea or as a dessert for dinner.",
-    "price": "5.00",
-    "img": "vanilla-cupcake-with-berries.jpg"
+    "img": "sea-buckthorn.png",
+    "name": "Sea buckthorn",
+    "description": "Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon",
+    "price": "5.50",
+    "category": "drinks",
+    "sizes": {
+      "s": {
+        "size": "200 ml",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "300 ml",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "400 ml",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Sugar",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Lemon",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Syrup",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "12",
+    "img": "marble-cheesecake.png",
+    "name": "Marble cheesecake",
+    "description": "Philadelphia cheese with lemon zest on a light sponge cake and red currant jam",
+    "price": "3.50",
     "category": "desserts",
-    "name": "Cottage Cheese Pie with Apples",
-    "description": "A delicate pie with a cottage cheese filling and fresh apples. A wonderful combination for fans of homemade baked goods.",
-    "price": "8.00",
-    "img": "cottage-cheese-pie-with-apples.jpg"
+    "sizes": {
+      "s": {
+        "size": "50 g",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "100 g",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "200 g",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Berries",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Nuts",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Jam",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "13",
+    "img": "red-velvet.png",
+    "name": "Red velvet",
+    "description": "Layer cake with cream cheese frosting",
+    "price": "4.00",
     "category": "desserts",
-    "name": "Classic Croissants",
-    "description": "Crispy croissants made from a traditional recipe. Perfect for morning coffee or tea.",
-    "price": "3.00",
-    "img": "classic-croissants.jpg"
+    "sizes": {
+      "s": {
+        "size": "50 g",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "100 g",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "200 g",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Berries",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Nuts",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Jam",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "14",
+    "img": "cheesecakes.png",
+    "name": "Cheesecakes",
+    "description": "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
+    "price": "4.50",
     "category": "desserts",
-    "name": "Carrot Cake with Nuts",
-    "description": "A delicate carrot cake with nuts and spices. The perfect dessert for lovers of sweet treats with character.",
-    "price": "12.00",
-    "img": "carrot-cake-with-nuts.jpg"
+    "sizes": {
+      "s": {
+        "size": "50 g",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "100 g",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "200 g",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Berries",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Nuts",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Jam",
+        "add-price": "0.50"
+      }
+    ]
   },
+
   {
     "id": "15",
+    "img": "creme-brulee.png",
+    "name": "Creme brulee",
+    "description": "Delicate creamy dessert in a caramel basket with wild berries",
+    "price": "4.00",
+    "category": "desserts",
+    "sizes": {
+      "s": {
+        "size": "50 g",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "100 g",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "200 g",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Berries",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Nuts",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Jam",
+        "add-price": "0.50"
+      }
+    ]
+  },
+
+  {
+    "id": "16",
+    "img": "pancakes.png",
+    "name": "Pancakes",
+    "description": "Tender pancakes with strawberry jam and fresh strawberries",
+    "price": "4.50",
+    "category": "desserts",
+    "sizes": {
+      "s": {
+        "size": "50 g",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "100 g",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "200 g",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Berries",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Nuts",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Jam",
+        "add-price": "0.50"
+      }
+    ]
+  },
+
+  {
+    "id": "17",
+    "img": "honey-cake.png",
+    "name": "Honey cake",
+    "description": "Classic honey cake with delicate custard",
+    "price": "4.50",
+    "category": "desserts",
+    "sizes": {
+      "s": {
+        "size": "50 g",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "100 g",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "200 g",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Berries",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Nuts",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Jam",
+        "add-price": "0.50"
+      }
+    ]
+  },
+
+  {
+    "id": "18",
+    "img": "chocolate-cake.png",
+    "name": "Chocolate cake",
+    "description": "Cake with hot chocolate filling and nuts with dried apricots",
+    "price": "5.50",
+    "category": "desserts",
+    "sizes": {
+      "s": {
+        "size": "50 g",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "100 g",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "200 g",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Berries",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Nuts",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Jam",
+        "add-price": "0.50"
+      }
+    ]
+  },
+
+  {
+    "id": "19",
+    "img": "black-forest.png",
+    "name": "Black forest",
+    "description": "A combination of thin sponge cake with cherry jam and light chocolate mousse",
+    "price": "6.50",
+    "category": "desserts",
+    "sizes": {
+      "s": {
+        "size": "50 g",
+        "add-price": "0.00"
+      },
+      "m": {
+        "size": "100 g",
+        "add-price": "0.50"
+      },
+      "l": {
+        "size": "200 g",
+        "add-price": "1.00"
+      }
+    },
+    "additives": [
+      {
+        "name": "Berries",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Nuts",
+        "add-price": "0.50"
+      },
+      {
+        "name": "Jam",
+        "add-price": "0.50"
+      }
+    ]
+  },
+  {
+    "id": "20",
     "category": "sets",
     "name": "Sweet Delight Set",
     "description": "The perfect gift for sweet lovers! The set includes: chocolate cake with raspberry, three classic croissants, and a box of fresh macarons. Delight your loved ones with exquisite treats!",
@@ -148,7 +747,7 @@
     "img": "sweet-delight-set.jpg"
   },
   {
-    "id": "16",
+    "id": "21",
     "category": "sets",
     "name": "Cozy Evening Set",
     "description": "Create a cozy atmosphere with our gift set. It includes: cottage cheese pie with apples, tiramisu, and two fragrant teas. A great choice for an evening with family!",
@@ -156,7 +755,7 @@
     "img": "cozy-evening-set.jpg"
   },
   {
-    "id": "17",
+    "id": "22",
     "category": "sets",
     "name": "Desserts for Two Set",
     "description": "Treat your loved ones to an evening of sweets! The set includes: two pieces of strawberry cheesecake, two chocolate mousses, and two milkshakes. Perfect for a romantic date!",

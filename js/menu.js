@@ -1,6 +1,9 @@
 const previews = {'drinks': [], 'desserts': [], 'sets': []}
 
 let selectedItem = {};
+let currentPrice = 0;
+let sizes = null;
+let additives = null;
 
 const menuGrid = document.querySelector('#menuGrid')
 
@@ -54,10 +57,12 @@ function showElement(elem) {
       <div class="image-wrapper">
         <img src="assets/images/${elem.img}" alt="${elem.name}">
       </div>
-      <div class="flex-col gap-10">
+      <div class="flex-col gap-10" style="height: 100%">
         <h3 class="font-title-2 accent-text">${elem.name}</h3>
-        <p class="font-body">${elem.description}</p>
-        <span class="font-title-2">$ ${elem.category == 'drinks' ? elem.price.s : elem.price}</span>
+        <div class="flex-col gap-10" style="justify-content: space-between; height: 100%">
+          <p class="font-body">${elem.description}</p>
+          <span style="align-self: flex-end" class="font-title-2">$ ${elem.price}</span>
+        </div>
       </div>
   `;
 
@@ -81,59 +86,65 @@ function showModalWindow(id) {
   document.querySelector('#backdrop').classList.add('active');
   document.querySelector('#body').style.overflow = 'hidden';
 
-  previews[activeMenuPage].forEach(elem => {
+  selectedItem = previews[activeMenuPage].find(item => item.id == id)
 
-    if (elem.id == id) {
-      selectedItem = elem;
+  if (selectedItem.category !== 'sets') {
+    additives = selectedItem.additives;
+    sizes = selectedItem.sizes;
+  }
 
-      modalWindow.innerHTML = `
+  modalWindow.innerHTML = `
         <div class="image-wrapper">
-          <img src="assets/images/${elem.img}" alt="${elem.name}">
+          <img src="assets/images/${selectedItem.img}" alt="${selectedItem.name}">
         </div>
         <div class="flex-col gap-20 modal-window__info">
           <div class="flex-row gap-20 modal-window__title">
             <div class="flex-col gap-10">
-              <h3 class="font-title-2 accent-text">${elem.name}</h3>
-              <p class="font-body">${elem.description}</p>
+              <h3 class="font-title-2 accent-text">${selectedItem.name}</h3>
+              <p class="font-body">${selectedItem.description}</p>
             </div>
             <button class="icon-button font-title-2" onclick="closeModalWindow()">x</button>
           </div>
-          ${
-            elem.category == 'drinks' ?
-            `
-            <div class="modal-separator"></div>
-            ` : ''
-          }
-            <div class="flex-col gap-10 modal-window__buttons">
-            ${
-              elem.category == 'drinks' ? `
-              <span class="font-caption modal-window__caption">Size</span>
+          ${selectedItem.category !== 'sets' ?
+            `<div class="modal-separator"></div>` : ''}
+          <div class="flex-col gap-10 modal-window__buttons">
+          ${selectedItem.category !== 'sets' ?
+            `<span class="font-caption modal-window__caption">Size</span>
               <div class="flex-row gap-20">
-                <button class="modal-button active" id="s">s</button>
-                <button class="modal-button" id="m">m</button>
-                <button class="modal-button" id="l">l</button>
+                <button class="modal-button modal-size active" id="s">S - ${sizes.s.size}</button>
+                <button class="modal-button modal-size" id="m">M - ${sizes.m.size}</button>
+                <button class="modal-button modal-size" id="l">L - ${sizes.l.size}</button>
               </div>
-              ` : ''
-            }
-            </div>
+              <span class="font-caption modal-window__caption">Additives</span>
+              <div class="flex-row gap-20">
+                ${additives.map(item => `<button class="modal-button modal-additive" id="${item.name.toLowerCase()}">${item.name}</button>`).join('')}
+              </div>
+            ` : ''}
+          </div>
           <div class="modal-separator"></div>
           <div class="flex-row modal-window__total">
             <span class="font-title-2">Total:</span>
-            <span class="font-title-2" id="totalPrice">$ ${elem.category == 'drinks' ? elem.price.s : elem.price}</span>
+            <span class="font-title-2" id="totalPrice">$ ${selectedItem.price}</span>
           </div>
         </div>
     `
-    }
-  });
 
-  const modalButtons = document.querySelectorAll('.modal-button');
-  modalButtons.forEach(elem => {
+  const sizeButtons = document.querySelectorAll('.modal-size');
+  sizeButtons.forEach(elem => {
     elem.addEventListener('click', () => {
-      modalButtons.forEach(button => {
+      sizeButtons.forEach(button => {
         button.classList.remove('active');
       })
-      changePrice(elem.id);
       elem.classList.add('active');
+      changePrice();
+    })
+  })
+
+  const additiveButtons = document.querySelectorAll('.modal-additive');
+  additiveButtons.forEach(elem => {
+    elem.addEventListener('click', () => {
+      elem.classList.toggle('active');
+      changePrice();
     })
   })
 }
@@ -189,6 +200,16 @@ setsPin.addEventListener('click', () => {
   }
 })
 
-function changePrice(size) {
-  document.querySelector('#totalPrice').textContent = `$ ${selectedItem.price[size]}`;
+function changePrice() {
+  const sizeButton = document.querySelector('.modal-size.active');
+  const additiveButtons = [...document.querySelectorAll('.modal-additive')];
+  const activeButtons = additiveButtons.filter(item => item.classList.contains('active'));
+  
+  currentPrice = (+selectedItem.price + (+selectedItem.sizes[sizeButton.id]['add-price']));
+
+  activeButtons
+    .forEach(item => currentPrice += +selectedItem.additives
+    .find(additive => additive.name.toLowerCase() == item.id)['add-price'])
+
+  document.querySelector('#totalPrice').textContent = `$ ${currentPrice.toFixed(2)}`;
 }
