@@ -10,7 +10,7 @@ document.querySelector('#menuTitle').textContent = activeMenuPage;
 document.querySelector(`#${activeMenuPage}Pin`).classList.add('active');
 
 
-fetch('./js/menu.json')
+fetch('./js/products.json')
 .then(response => response.json())
 .then(data => {
   data.forEach(element => {
