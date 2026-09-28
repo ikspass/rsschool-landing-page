@@ -75,7 +75,6 @@ if (document.querySelector('#specialOffers')) {
     sliderOffset = slider.offsetWidth;
     currentSlidePosition = sliderOffset - sliderOffset * (currentSlide + 1)
     sliderContent.style.left = `${currentSlidePosition}px`;
-    touchScroll();
   })
 
   let currentSlidePosition = 0;
@@ -111,7 +110,7 @@ if (document.querySelector('#specialOffers')) {
     document.querySelectorAll('.carousel__indicator')[currentSlide].classList.add('active');
   }
 
-  touchScroll();
+  initTouchSlider();
 }
 
 function blockScroll() {
@@ -156,40 +155,37 @@ function resetTheme() {
   }
 }
 
-function touchScroll() {
-  if (window.matchMedia("(max-width: 800px)").matches){
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchmove', handleTouchMove, false);
-  
-    let x1 = null;
-    let y1 = null;
-  
-    function handleTouchStart(event){
-        const firstTouch = event.touches[0];
-  
-        x1 = firstTouch.clientX;
-        y1 = firstTouch.clientY;
-    }
-  
-    function handleTouchMove(event){
-      if(!x1 || !y1) return false;
+function initTouchSlider() {
+  let x1 = null;
+  let y1 = null;
 
-      let x2 = event.touches[0].clientX;
-      let y2 = event.touches[0].clientY;
+  document.addEventListener('touchstart', (event) => {
+    if (!window.matchMedia("(max-width: 800px)").matches) return;
 
-      let xDiff = x2 - x1;
-      let yDiff = y2 - y1;
+    const firstTouch = event.touches[0];
+    x1 = firstTouch.clientX;
+    y1 = firstTouch.clientY;
+  }, false);
 
-      if(Math.abs(xDiff)>Math.abs(yDiff)){
-        if(xDiff > 0){
-          slideToLeft();
-        }
-        else {
-          slideToRight();
-        }
+  document.addEventListener('touchmove', (event) => {
+    if (!window.matchMedia("(max-width: 800px)").matches) return;
+    if (!x1 || !y1) return false;
+
+    let x2 = event.touches[0].clientX;
+    let y2 = event.touches[0].clientY;
+
+    let xDiff = x2 - x1;
+    let yDiff = y2 - y1;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      if (xDiff > 0) {
+        slideToLeft();
+      } else {
+        slideToRight();
       }
-      x1 = null;
-      y1 = null;
     }
-  }
+    
+    x1 = null;
+    y1 = null;
+  }, false);
 }
