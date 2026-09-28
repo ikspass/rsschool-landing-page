@@ -21,12 +21,18 @@
       </nav>
       <div class="flex-row gap-30">
         <button class="main-button desktop" onclick="window.location.href='menu.html'">Menu</button>
-        <button class="icon-button burger-button" id="burgerButton"><img src="assets/images/burger-light.svg" alt="Burger Menu" id="burgerButtonIcon"></button>
+        <button class="icon-button burger-button" id="burgerButton">
+          <div class="flex-col burger-icon">
+            <div class="burger-line top"></div>
+            <div class="burger-line bottom"></div>
+          </div>
+        </button>
         <button class="icon-button" onclick="changeTheme()" id="themeButton"><img src="assets/images/dark-theme.svg" alt="Change theme" id="themeButtonIcon"></button>
       </div>
     </div>
   </header>
   <main class="flex-col gap-70">
+    <div class="backdrop" id="backdrop"></div>
     <div id="burgerMenu" class="burger-menu main-container drop-shadow">
       <nav>
         <ul class="flex-col gap-20 header-nav">
@@ -87,17 +93,12 @@
         <h2 class="font-title-1">Special Offers</h2>
         <div class="flex-col gap-20 special-offers__carousel">
           <div class="flex-row gap-20 carousel__viewport">
-            <button class="icon-button tablet" id="leftButton">&lt;</button>
-              <div class="flex-row gap-30 slide">
-                <div class="image-wrapper">
-                  <img id="slideImg" src="assets/images/morning-coffee-discount.jpg" alt="Morning Coffee Discount">
-                </div>
-                <div class="flex-col gap-10">
-                  <h3 class="font-title-2 accent-text" id="slideTitle">Morning Coffee Discount</h3>
-                  <p class="font-body" id="slideDescription">Start your day with a refreshing coffee! Order any coffee before 11:00 and get a 20% discount on fresh pastries. The perfect combination for a morning mood!</p>
-                </div>
+            <button class="icon-button tablet" onclick="slideToLeft()" id="leftButton">&lt;</button>
+            <div class="slider" id="slider">
+              <div class="slides" id="slides">
               </div>
-            <button class="icon-button tablet" id="rightButton">&gt;</button>
+            </div>
+            <button class="icon-button tablet" onclick="slideToRight()" id="rightButton">&gt;</button>
           </div>
           <div class="flex-row gap-10" id="sliderIndicators">
             <div class="carousel__indicator active"></div>
